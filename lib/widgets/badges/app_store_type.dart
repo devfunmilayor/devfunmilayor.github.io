@@ -1,0 +1,1 @@
+enum AppStoreType { ios, android }
