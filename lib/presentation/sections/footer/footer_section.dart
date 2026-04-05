@@ -80,12 +80,6 @@ class _Copyright extends StatelessWidget {
           AppStrings.footerCopyright,
           style: AppTypography.bodySmall,
         ),
-        Text(
-          AppStrings.builtWith,
-          style: AppTypography.monoSmall.copyWith(
-            color: AppColors.accent.withValues(alpha: 0.6),
-          ),
-        ),
       ],
     );
   }
