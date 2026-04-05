@@ -69,16 +69,19 @@ abstract class AppStrings {
 
   // Social URLs
   static const String githubUrl = 'https://github.com/devfunmilayor';
-  static const String linkedinUrl = 'https://www.linkedin.com/in/devfunmilayor/';
+  static const String linkedinUrl =
+      'https://www.linkedin.com/in/devfunmilayor/';
   static const String twitterUrl = 'https://twitter.com/devfunmi';
 
   // Booking URLs
   static const String calendlyUrl = 'https://calendly.com/tfunmii';
-  static const String googleMeetUrl = 'https://meet.google.com/new?authuser=tfunmii@gmail.com';
+  static const String googleMeetUrl =
+      'https://meet.google.com/new?authuser=tfunmii@gmail.com';
 
   // EmailJS config
   static const String emailJsServiceId = 'service_ldtkvuq';
   static const String emailJsTemplateId = 'template_ztixrpo';
+  static const String emailJsAutoReplyTemplateId = 'template_osl2h0b';
   static const String emailJsPublicKey = 'LUH6GVX943aCxExcP';
 
   // Footer

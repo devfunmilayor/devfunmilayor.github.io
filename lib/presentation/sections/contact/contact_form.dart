@@ -34,9 +34,31 @@ class _ContactFormState extends State<ContactForm> {
     super.dispose();
   }
 
+  String _formattedNow() {
+    final now = DateTime.now().toUtc();
+    final months = [
+      'Jan','Feb','Mar','Apr','May','Jun',
+      'Jul','Aug','Sep','Oct','Nov','Dec'
+    ];
+    final h = now.hour.toString().padLeft(2, '0');
+    final m = now.minute.toString().padLeft(2, '0');
+    return '${months[now.month - 1]} ${now.day}, ${now.year} at $h:$m UTC';
+  }
+
   Future<void> _submit() async {
     if (!(_formKey.currentState?.validate() ?? false)) return;
     setState(() => _status = _FormStatus.submitting);
+
+    final params = {
+      'from_name': _nameCtrl.text.trim(),
+      'reply_to': _emailCtrl.text.trim(),
+      'company': _companyCtrl.text.trim().isEmpty
+          ? 'Not provided'
+          : _companyCtrl.text.trim(),
+      'message': _messageCtrl.text.trim(),
+      'to_email': AppStrings.email,
+      'sent_time': _formattedNow(),
+    };
 
     try {
       final response = await http.post(
@@ -46,17 +68,22 @@ class _ContactFormState extends State<ContactForm> {
           'service_id': AppStrings.emailJsServiceId,
           'template_id': AppStrings.emailJsTemplateId,
           'user_id': AppStrings.emailJsPublicKey,
-          'template_params': {
-            'from_name': _nameCtrl.text.trim(),
-            'reply_to': _emailCtrl.text.trim(),
-            'company': _companyCtrl.text.trim(),
-            'message': _messageCtrl.text.trim(),
-            'to_email': AppStrings.email,
-          },
+          'template_params': params,
         }),
       );
 
       if (response.statusCode == 200) {
+        // Send auto-reply to the visitor
+        await http.post(
+          Uri.parse('https://api.emailjs.com/api/v1.0/email/send'),
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({
+            'service_id': AppStrings.emailJsServiceId,
+            'template_id': AppStrings.emailJsAutoReplyTemplateId,
+            'user_id': AppStrings.emailJsPublicKey,
+            'template_params': params,
+          }),
+        );
         setState(() => _status = _FormStatus.success);
       } else {
         setState(() {
