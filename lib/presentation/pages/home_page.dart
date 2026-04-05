@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    ScrollUtils.registerController(_scrollController);
     _scrollController.addListener(_updateActiveSection);
 
     if (widget.initialSection != null) {

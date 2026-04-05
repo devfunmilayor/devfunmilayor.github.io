@@ -72,7 +72,7 @@ abstract class AppStrings {
   static const String githubUrl = 'https://github.com/devfunmilayor';
   static const String linkedinUrl =
       'https://www.linkedin.com/in/devfunmilayor/';
-  static const String twitterUrl = 'https://twitter.com/devfunmi';
+  static const String twitterUrl = 'https://x.com/funm_ii';
 
   // Booking URLs
   static const String calendlyUrl = 'https://calendly.com/tfunmii';

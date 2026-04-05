@@ -1,188 +1,120 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_typography.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/constants/app_strings.dart';
+import '../../../core/di/injection.dart';
 import '../../../widgets/buttons/primary_button.dart';
+import 'bloc/contact_bloc.dart';
+import 'bloc/contact_event.dart';
+import 'bloc/contact_state.dart';
 
-enum _FormStatus { idle, submitting, success, error }
-
-class ContactForm extends StatefulWidget {
+class ContactForm extends StatelessWidget {
   const ContactForm({super.key});
 
   @override
-  State<ContactForm> createState() => _ContactFormState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => getIt<ContactBloc>(),
+      child: const _ContactFormBody(),
+    );
+  }
 }
 
-class _ContactFormState extends State<ContactForm> {
-  final _formKey = GlobalKey<FormState>();
-  final _nameCtrl = TextEditingController();
-  final _emailCtrl = TextEditingController();
-  final _companyCtrl = TextEditingController();
-  final _messageCtrl = TextEditingController();
-  _FormStatus _status = _FormStatus.idle;
-  String? _errorMsg;
-
-  @override
-  void dispose() {
-    _nameCtrl.dispose();
-    _emailCtrl.dispose();
-    _companyCtrl.dispose();
-    _messageCtrl.dispose();
-    super.dispose();
-  }
-
-  String _formattedNow() {
-    final now = DateTime.now().toUtc();
-    final months = [
-      'Jan','Feb','Mar','Apr','May','Jun',
-      'Jul','Aug','Sep','Oct','Nov','Dec'
-    ];
-    final h = now.hour.toString().padLeft(2, '0');
-    final m = now.minute.toString().padLeft(2, '0');
-    return '${months[now.month - 1]} ${now.day}, ${now.year} at $h:$m UTC';
-  }
-
-  Future<void> _submit() async {
-    if (!(_formKey.currentState?.validate() ?? false)) return;
-    setState(() => _status = _FormStatus.submitting);
-
-    final params = {
-      'from_name': _nameCtrl.text.trim(),
-      'reply_to': _emailCtrl.text.trim(),
-      'company': _companyCtrl.text.trim().isEmpty
-          ? 'Not provided'
-          : _companyCtrl.text.trim(),
-      'message': _messageCtrl.text.trim(),
-      'to_email': AppStrings.email,
-      'sent_time': _formattedNow(),
-    };
-
-    try {
-      final response = await http.post(
-        Uri.parse('https://api.emailjs.com/api/v1.0/email/send'),
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({
-          'service_id': AppStrings.emailJsServiceId,
-          'template_id': AppStrings.emailJsTemplateId,
-          'user_id': AppStrings.emailJsPublicKey,
-          'template_params': params,
-        }),
-      );
-
-      if (response.statusCode == 200) {
-        // Send auto-reply to the visitor
-        await http.post(
-          Uri.parse('https://api.emailjs.com/api/v1.0/email/send'),
-          headers: {'Content-Type': 'application/json'},
-          body: jsonEncode({
-            'service_id': AppStrings.emailJsServiceId,
-            'template_id': AppStrings.emailJsAutoReplyTemplateId,
-            'user_id': AppStrings.emailJsPublicKey,
-            'template_params': params,
-          }),
-        );
-        setState(() => _status = _FormStatus.success);
-      } else {
-        setState(() {
-          _status = _FormStatus.error;
-          _errorMsg = 'Something went wrong. Please try again.';
-        });
-      }
-    } catch (_) {
-      setState(() {
-        _status = _FormStatus.error;
-        _errorMsg = 'Network error. Please check your connection.';
-      });
-    }
-  }
+class _ContactFormBody extends StatelessWidget {
+  const _ContactFormBody();
 
   @override
   Widget build(BuildContext context) {
-    if (_status == _FormStatus.success) {
-      return _SuccessMessage();
-    }
+    return BlocConsumer<ContactBloc, ContactState>(
+      listenWhen: (prev, curr) => prev.status != curr.status,
+      listener: (context, state) {
+        if (state.status == ContactStatus.error && state.errorMessage != null) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.errorMessage!),
+              backgroundColor: AppColors.error,
+            ),
+          );
+        }
+      },
+      builder: (context, state) {
+        if (state.status == ContactStatus.success) {
+          return const _SuccessMessage();
+        }
 
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _field(
-            controller: _nameCtrl,
-            label: 'Full Name',
-            hint: 'Funmi Layo',
-            validator: (v) =>
-                (v == null || v.trim().isEmpty) ? 'Name is required' : null,
-          ),
-          const SizedBox(height: AppSpacing.md),
-          _field(
-            controller: _emailCtrl,
-            label: 'Email Address',
-            hint: 'you@company.com',
-            keyboardType: TextInputType.emailAddress,
-            validator: (v) {
-              if (v == null || v.trim().isEmpty) return 'Email is required';
-              if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(v.trim())) {
-                return 'Enter a valid email';
-              }
-              return null;
-            },
-          ),
-          const SizedBox(height: AppSpacing.md),
-          _field(
-            controller: _companyCtrl,
-            label: 'Company / Role (optional)',
-            hint: 'Acme Corp · Senior Engineer',
-          ),
-          const SizedBox(height: AppSpacing.md),
-          _field(
-            controller: _messageCtrl,
-            label: 'Message',
-            hint: 'What are you working on?',
-            maxLines: 5,
-            validator: (v) =>
-                (v == null || v.trim().isEmpty) ? 'Message is required' : null,
-          ),
-          const SizedBox(height: AppSpacing.xl),
-          if (_status == _FormStatus.error && _errorMsg != null)
-            Padding(
-              padding: const EdgeInsets.only(bottom: AppSpacing.md),
-              child: Text(
-                _errorMsg!,
-                style: AppTypography.bodySmall.copyWith(
-                  color: AppColors.error,
+        final bloc = context.read<ContactBloc>();
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _field(
+              label: 'Full Name',
+              hint: 'Funmi Layo',
+              onChanged: (v) => bloc.add(ContactEvent.nameChanged(v)),
+            ),
+            const SizedBox(height: AppSpacing.md),
+            _field(
+              label: 'Email Address',
+              hint: 'you@company.com',
+              keyboardType: TextInputType.emailAddress,
+              onChanged: (v) => bloc.add(ContactEvent.emailChanged(v)),
+            ),
+            const SizedBox(height: AppSpacing.md),
+            _field(
+              label: 'Company / Role (optional)',
+              hint: 'Acme Corp · Senior Engineer',
+              onChanged: (v) => bloc.add(ContactEvent.companyChanged(v)),
+            ),
+            const SizedBox(height: AppSpacing.md),
+            _field(
+              label: 'Message',
+              hint: 'What are you working on?',
+              maxLines: 5,
+              onChanged: (v) => bloc.add(ContactEvent.messageChanged(v)),
+            ),
+            const SizedBox(height: AppSpacing.xl),
+            if (state.status == ContactStatus.error &&
+                state.errorMessage != null)
+              Padding(
+                padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                child: Text(
+                  state.errorMessage!,
+                  style: AppTypography.bodySmall.copyWith(
+                    color: AppColors.error,
+                  ),
                 ),
               ),
+            PrimaryButton(
+              label: state.status == ContactStatus.submitting
+                  ? 'Sending...'
+                  : AppStrings.sendMessage,
+              icon: state.status == ContactStatus.submitting
+                  ? null
+                  : Icons.send,
+              onTap: state.isValid && state.status != ContactStatus.submitting
+                  ? () => bloc.add(const ContactEvent.submitted())
+                  : null,
+              fullWidth: true,
             ),
-          PrimaryButton(
-            label: _status == _FormStatus.submitting
-                ? 'Sending...'
-                : AppStrings.sendMessage,
-            icon: _status == _FormStatus.submitting ? null : Icons.send,
-            onTap: _status == _FormStatus.submitting ? () {} : _submit,
-            fullWidth: true,
-          ),
-        ],
-      ),
+          ],
+        );
+      },
     );
   }
 
   Widget _field({
-    required TextEditingController controller,
     required String label,
     String? hint,
     TextInputType? keyboardType,
     int maxLines = 1,
-    String? Function(String?)? validator,
+    required void Function(String) onChanged,
   }) {
-    return TextFormField(
-      controller: controller,
+    return TextField(
       keyboardType: keyboardType,
       maxLines: maxLines,
-      validator: validator,
+      onChanged: onChanged,
       style: AppTypography.bodyMedium.copyWith(color: AppColors.textPrimary),
       decoration: InputDecoration(
         labelText: label,
@@ -193,6 +125,8 @@ class _ContactFormState extends State<ContactForm> {
 }
 
 class _SuccessMessage extends StatelessWidget {
+  const _SuccessMessage();
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants/app_strings.dart';
+import '../constants/app_spacing.dart';
 
 abstract class ScrollUtils {
   static final Map<String, GlobalKey> sectionKeys = {
@@ -13,11 +14,23 @@ abstract class ScrollUtils {
     AppStrings.sectionFooter: GlobalKey(),
   };
 
+  static ScrollController? _controller;
+
+  static void registerController(ScrollController controller) {
+    _controller = controller;
+  }
+
   static void scrollTo(String section) {
-    final context = sectionKeys[section]?.currentContext;
-    if (context == null) return;
-    Scrollable.ensureVisible(
-      context,
+    final ctx = sectionKeys[section]?.currentContext;
+    if (ctx == null || _controller == null) return;
+    final box = ctx.findRenderObject() as RenderBox?;
+    if (box == null) return;
+    final target = (_controller!.offset +
+            box.localToGlobal(Offset.zero).dy -
+            AppSpacing.navHeight)
+        .clamp(0.0, _controller!.position.maxScrollExtent);
+    _controller!.animateTo(
+      target,
       duration: const Duration(milliseconds: 600),
       curve: Curves.easeInOutCubic,
     );

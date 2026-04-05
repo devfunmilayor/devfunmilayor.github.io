@@ -7,7 +7,7 @@ import '../../core/constants/app_animations.dart';
 class PrimaryButton extends StatefulWidget {
   final String label;
   final IconData? icon;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final bool fullWidth;
 
   const PrimaryButton({
@@ -27,8 +27,11 @@ class _PrimaryButtonState extends State<PrimaryButton> {
 
   @override
   Widget build(BuildContext context) {
+    final isDisabled = widget.onTap == null;
     return MouseRegion(
-      cursor: SystemMouseCursors.click,
+      cursor: isDisabled
+          ? SystemMouseCursors.basic
+          : SystemMouseCursors.click,
       onEnter: (_) => Future.microtask(() { if (mounted) setState(() => _hovered = true); }),
       onExit: (_) => Future.microtask(() { if (mounted) setState(() => _hovered = false); }),
       child: GestureDetector(
@@ -41,9 +44,11 @@ class _PrimaryButtonState extends State<PrimaryButton> {
             vertical: AppSpacing.md,
           ),
           decoration: BoxDecoration(
-            color: _hovered
-                ? AppColors.accent.withValues(alpha: 0.9)
-                : AppColors.accent,
+            color: isDisabled
+                ? AppColors.accent.withValues(alpha: 0.4)
+                : _hovered
+                    ? AppColors.accent.withValues(alpha: 0.9)
+                    : AppColors.accent,
             borderRadius: BorderRadius.circular(8),
             boxShadow: _hovered
                 ? [
