@@ -20,6 +20,10 @@ class ContactRepositoryImpl implements ContactRepository {
       'sent_time': message.sentTime,
     };
     await _datasource.sendNotification(params);
-    await _datasource.sendAutoReply(params);
+    // Auto-reply is best-effort — a template misconfiguration shouldn't
+    // show an error to the user when the main notification already succeeded.
+    try {
+      await _datasource.sendAutoReply(params);
+    } catch (_) {}
   }
 }
