@@ -21,10 +21,10 @@ class _TagChipState extends State<TagChip> {
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (_) {
-        if (widget.hoverable) setState(() => _hovered = true);
+        if (widget.hoverable) Future.microtask(() { if (mounted) setState(() => _hovered = true); });
       },
       onExit: (_) {
-        if (widget.hoverable) setState(() => _hovered = false);
+        if (widget.hoverable) Future.microtask(() { if (mounted) setState(() => _hovered = false); });
       },
       child: AnimatedContainer(
         duration: AppAnimations.hoverDuration,

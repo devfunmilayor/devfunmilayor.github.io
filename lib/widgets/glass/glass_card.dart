@@ -39,10 +39,14 @@ class _GlassCardState extends State<GlassCard> {
           ? SystemMouseCursors.click
           : MouseCursor.defer,
       onEnter: (_) {
-        if (widget.hoverable) setState(() => _hovered = true);
+        if (widget.hoverable) {
+          Future.microtask(() { if (mounted) setState(() => _hovered = true); });
+        }
       },
       onExit: (_) {
-        if (widget.hoverable) setState(() => _hovered = false);
+        if (widget.hoverable) {
+          Future.microtask(() { if (mounted) setState(() => _hovered = false); });
+        }
       },
       child: GestureDetector(
         onTap: widget.onTap,

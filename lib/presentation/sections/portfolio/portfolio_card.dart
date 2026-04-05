@@ -58,8 +58,8 @@ class _PortfolioCardState extends State<PortfolioCard>
     final isMobile = ResponsiveLayout.isMobile(context);
 
     return MouseRegion(
-      onEnter: isMobile ? null : (_) => _flip(),
-      onExit: isMobile ? null : (_) => _flip(),
+      onEnter: isMobile ? null : (_) => Future.microtask(_flip),
+      onExit: isMobile ? null : (_) => Future.microtask(_flip),
       child: GestureDetector(
         onTap: isMobile ? _flip : null,
         child: AnimatedBuilder(

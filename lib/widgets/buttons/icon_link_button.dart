@@ -28,8 +28,8 @@ class _IconLinkButtonState extends State<IconLinkButton> {
   Widget build(BuildContext context) {
     final btn = MouseRegion(
       cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => _hovered = true),
-      onExit: (_) => setState(() => _hovered = false),
+      onEnter: (_) => Future.microtask(() { if (mounted) setState(() => _hovered = true); }),
+      onExit: (_) => Future.microtask(() { if (mounted) setState(() => _hovered = false); }),
       child: GestureDetector(
         onTap: () => LaunchUtils.open(widget.url),
         child: AnimatedContainer(
