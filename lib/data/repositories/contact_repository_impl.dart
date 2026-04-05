@@ -11,19 +11,25 @@ class ContactRepositoryImpl implements ContactRepository {
 
   @override
   Future<void> sendMessage(ContactMessage message) async {
-    final params = {
+    final baseParams = {
       'from_name': message.name,
       'reply_to': message.email,
       'company': message.company.isEmpty ? 'Not provided' : message.company,
       'message': message.message,
-      'to_email': 'tfunmii@gmail.com',
       'sent_time': message.sentTime,
     };
-    await _datasource.sendNotification(params);
-    // Auto-reply is best-effort — a template misconfiguration shouldn't
-    // show an error to the user when the main notification already succeeded.
+
+    await _datasource.sendNotification({
+      ...baseParams,
+      'to_email': 'tfunmii@gmail.com',
+    });
+
+    // Auto-reply goes to the visitor — to_email is their address.
     try {
-      await _datasource.sendAutoReply(params);
+      await _datasource.sendAutoReply({
+        ...baseParams,
+        'to_email': message.email,
+      });
     } catch (_) {}
   }
 }
