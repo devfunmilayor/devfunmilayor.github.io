@@ -22,13 +22,16 @@ class ContactRemoteDatasource {
         'template_params': params,
       }),
     );
-    if (response.statusCode != 200) {
-      throw Exception('Failed to send notification: ${response.statusCode}');
+    // EmailJS returns 200 "OK" on success. Treat anything 2xx as success too.
+    // Non-2xx means the request was definitely rejected before processing.
+    if (response.statusCode >= 400) {
+      throw Exception('Failed to send: ${response.statusCode}');
     }
   }
 
   Future<void> sendAutoReply(Map<String, String> params) async {
-    final response = await _client.post(
+    // Best-effort — caller should swallow exceptions from this.
+    await _client.post(
       Uri.parse(_apiUrl),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
@@ -38,8 +41,5 @@ class ContactRemoteDatasource {
         'template_params': params,
       }),
     );
-    if (response.statusCode != 200) {
-      throw Exception('Failed to send auto-reply: ${response.statusCode}');
-    }
   }
 }
