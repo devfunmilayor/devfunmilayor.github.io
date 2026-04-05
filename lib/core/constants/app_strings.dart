@@ -1,30 +1,30 @@
 abstract class AppStrings {
   // Personal
-  static const String name = 'Emmanuel Olufunmilayo';
+  static const String name = 'Funmi Layo';
   static const String displayName = 'Dev.Funmi';
   static const String title = 'Senior Flutter & Mobile Engineer';
   static const String tagline =
-      'I build mobile products that scale — from greenfield to millions of users.';
+      'I build mobile products that reach millions. Architecture to App Store, owned end to end.';
   static const String availability = 'Available for new opportunities';
   static const String location = 'Lagos, Nigeria';
   static const String email = 'tfunmii@gmail.com';
 
   // About bio
   static const String bio =
-      "With 6+ years building high-performance mobile applications, I specialize in Flutter, "
-      "native iOS/Swift, Android/Kotlin, and backend services. I've shipped 10+ live apps "
-      "across fintech, banking, investments, and enterprise — trusted by millions of users daily.\n\n"
-      "I thrive in senior engineering roles where I own architecture end-to-end: from "
-      "Clean Architecture and DDD patterns to CI/CD pipelines, observability, and on-device ML. "
-      "Passionate about code quality, performance, and shipping products that actually work.";
+      "Six years shipping Flutter, iOS/Swift, and Android/Kotlin apps to production. "
+      "I've led mobile architecture on products serving millions of daily users across "
+      "banking, crypto wallets, and enterprise software.\n\n"
+      "I own the full delivery lifecycle: system design, CI/CD pipelines, on-device ML, "
+      "and release engineering. Currently a Lead Engineer at TruePath Vision building a "
+      "secure biometric SDK at scale. Deepening expertise in platform engineering and developer tooling.";
 
   // Hero typewriter roles
   static const List<String> roles = [
     'Flutter Engineer',
     'Mobile Architect',
+    'Product Engineer',
     'iOS & Android Developer',
-    'Fintech Specialist',
-    'Clean Code Advocate',
+    'Learning Platform Engineering',
   ];
 
   // Nav sections
@@ -68,29 +68,29 @@ abstract class AppStrings {
   static const String scheduleGoogle = 'Schedule via Google Meet';
 
   // Social URLs
-  static const String githubUrl = 'https://github.com/devfunmi';
+  static const String githubUrl = 'https://github.com/devfunmilayor/devfunmilayor';
   static const String linkedinUrl = 'https://linkedin.com/in/devfunmi';
   static const String twitterUrl = 'https://twitter.com/devfunmi';
 
-  // Booking URLs (replace with real links)
+  // Booking URLs
   static const String calendlyUrl = 'https://calendly.com/tfunmii';
-  static const String googleMeetUrl = 'https://meet.google.com/new';
+  static const String googleMeetUrl = 'https://meet.google.com/new?authuser=tfunmii@gmail.com';
 
-  // EmailJS config (replace with real values from emailjs.com dashboard)
-  static const String emailJsServiceId = 'service_devfunmi';
-  static const String emailJsTemplateId = 'template_contact';
-  static const String emailJsPublicKey = 'YOUR_EMAILJS_PUBLIC_KEY';
+  // EmailJS config
+  static const String emailJsServiceId = 'service_ldtkvuq';
+  static const String emailJsTemplateId = 'template_ztixrpo';
+  static const String emailJsPublicKey = 'LUH6GVX943aCxExcP';
 
   // Footer
   static const String footerCopyright =
-      '© 2025 Emmanuel Olufunmilayo. All rights reserved.';
+      '© 2025 Funmi Layo. All rights reserved.';
   static const String builtWith = 'Built with Flutter Web';
 
   // Contact section
   static const String contactSubtitle =
-      "Open to senior roles, collaborations, and technical conversations.";
+      "Open to senior engineering roles, technical collaboration, and the right problems.";
   static const String bookingSubtitle =
-      "Pick a time that works — 30 or 60 minute sessions available.";
+      "30 or 60 minute sessions. Pick a time and let's talk.";
 
   // Quick facts
   static const String yearsExperience = '6+';

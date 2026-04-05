@@ -1,11 +1,11 @@
 {
-    "name": "Emmanuel Olufunmilayo — Dev.Funmi",
-    "short_name": "Dev.Funmi",
+    "name": "dev.funmi",
+    "short_name": "dev.funmi",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0A0A0F",
     "theme_color": "#0A0A0F",
-    "description": "Senior Flutter & Mobile Engineer portfolio — Emmanuel Olufunmilayo (Dev.Funmi).",
+    "description": "Senior Flutter & Mobile Engineer portfolio — Funmi Layo (dev.funmi).",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

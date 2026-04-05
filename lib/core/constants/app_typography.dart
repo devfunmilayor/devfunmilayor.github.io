@@ -7,7 +7,7 @@ abstract class AppTypography {
 
   static const TextStyle displayLarge = TextStyle(
     fontFamily: _sans,
-    fontSize: 56,
+    fontSize: 48,
     fontWeight: FontWeight.w800,
     color: AppColors.textPrimary,
     height: 1.1,
@@ -16,7 +16,7 @@ abstract class AppTypography {
 
   static const TextStyle displayMedium = TextStyle(
     fontFamily: _sans,
-    fontSize: 40,
+    fontSize: 34,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
     height: 1.2,
@@ -25,7 +25,7 @@ abstract class AppTypography {
 
   static const TextStyle displaySmall = TextStyle(
     fontFamily: _sans,
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
     height: 1.3,
@@ -34,7 +34,7 @@ abstract class AppTypography {
 
   static const TextStyle headingL = TextStyle(
     fontFamily: _sans,
-    fontSize: 24,
+    fontSize: 21,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
     height: 1.3,
@@ -42,7 +42,7 @@ abstract class AppTypography {
 
   static const TextStyle headingM = TextStyle(
     fontFamily: _sans,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
     height: 1.4,
@@ -50,7 +50,7 @@ abstract class AppTypography {
 
   static const TextStyle headingS = TextStyle(
     fontFamily: _sans,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
     height: 1.4,
@@ -58,7 +58,7 @@ abstract class AppTypography {
 
   static const TextStyle bodyLarge = TextStyle(
     fontFamily: _sans,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.w400,
     color: AppColors.textMuted,
     height: 1.7,
@@ -66,7 +66,7 @@ abstract class AppTypography {
 
   static const TextStyle bodyMedium = TextStyle(
     fontFamily: _sans,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColors.textMuted,
     height: 1.6,
@@ -106,7 +106,7 @@ abstract class AppTypography {
 
   static const TextStyle monoLarge = TextStyle(
     fontFamily: _mono,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.w500,
     color: AppColors.accent,
     height: 1.6,

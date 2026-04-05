@@ -8,7 +8,7 @@ class DevFunmiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Emmanuel Olufunmilayo — Senior Flutter & Mobile Engineer',
+      title: 'dev.funmi',
       theme: AppTheme.dark,
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,

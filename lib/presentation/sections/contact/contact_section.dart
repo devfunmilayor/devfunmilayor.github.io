@@ -82,14 +82,14 @@ class _ContactInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Let's build\nsomething great.",
+          "Let's build\nsomething that ships.",
           style: AppTypography.displaySmall.copyWith(
             color: AppColors.textPrimary,
           ),
         ),
         const SizedBox(height: AppSpacing.md),
         Text(
-          'Open to senior roles, collaborations, and technical conversations.',
+          AppStrings.contactSubtitle,
           style: AppTypography.bodyLarge,
         ),
         const SizedBox(height: AppSpacing.xl),
@@ -101,7 +101,7 @@ class _ContactInfo extends StatelessWidget {
         const SizedBox(height: AppSpacing.sm),
         _ContactItem(
           icon: Icons.code,
-          label: 'github.com/devfunmi',
+          label: 'github.com/devfunmilayor',
           onTap: () => LaunchUtils.open(AppStrings.githubUrl),
         ),
         const SizedBox(height: AppSpacing.sm),

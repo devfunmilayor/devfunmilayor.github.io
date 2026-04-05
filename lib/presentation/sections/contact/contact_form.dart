@@ -51,6 +51,7 @@ class _ContactFormState extends State<ContactForm> {
             'reply_to': _emailCtrl.text.trim(),
             'company': _companyCtrl.text.trim(),
             'message': _messageCtrl.text.trim(),
+            'to_email': AppStrings.email,
           },
         }),
       );
@@ -85,7 +86,7 @@ class _ContactFormState extends State<ContactForm> {
           _field(
             controller: _nameCtrl,
             label: 'Full Name',
-            hint: 'Emmanuel Olufunmilayo',
+            hint: 'Funmi Layo',
             validator: (v) =>
                 (v == null || v.trim().isEmpty) ? 'Name is required' : null,
           ),
@@ -113,7 +114,7 @@ class _ContactFormState extends State<ContactForm> {
           _field(
             controller: _messageCtrl,
             label: 'Message',
-            hint: "Let's build something great...",
+            hint: 'What are you working on?',
             maxLines: 5,
             validator: (v) =>
                 (v == null || v.trim().isEmpty) ? 'Message is required' : null,

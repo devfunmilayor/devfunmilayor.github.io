@@ -8,12 +8,12 @@ abstract class PortfolioData {
       period: 'Feb 2023 – Nov 2024',
       description:
           'Decentralized crypto wallet & consumer fintech platform. '
-          'Built from greenfield to production — owning mobile architecture, '
+          'Built from greenfield to production, owning mobile architecture, '
           'backend services, and release pipelines.',
       tags: ['Flutter', 'Crypto Wallet', 'Golang', 'gRPC', 'Clean Architecture'],
       highlights: [
         '0 → production full ownership',
-        'Real-time customer–agent chat',
+        'Real-time customer to agent chat',
         '99.9% uptime sustained',
       ],
       iosUrl: 'https://apps.apple.com/app/zabira/id6443791329',
@@ -28,7 +28,7 @@ abstract class PortfolioData {
           'Cross-border money transfer & fintech platform with '
           'Flutter cross-platform UI and native Kotlin/Swift modules '
           'for performance-critical features.',
-      tags: ['Flutter', 'Fintech', 'Kotlin', 'Swift', 'CI/CD'],
+      tags: ['Flutter', 'Kotlin', 'Swift', 'CI/CD'],
       highlights: [
         '30% crash rate reduction',
         '35% faster cross-border processing',
@@ -37,25 +37,6 @@ abstract class PortfolioData {
       iosUrl: 'https://apps.apple.com/app/smartsend-finance/id1619841578',
       androidUrl:
           'https://play.google.com/store/apps/details?id=com.zojatech.smartsend',
-    ),
-
-    PortfolioModel(
-      appName: 'ZojaPay',
-      company: 'Zojatech',
-      period: 'Aug 2022 – Nov 2023',
-      description:
-          'High-throughput payments platform with a real-time currency '
-          'exchange engine. Internal FX converter boosted cross-border '
-          'transaction processing speed by 35%.',
-      tags: ['Flutter', 'Payments', 'Real-time FX', 'Event-driven Architecture'],
-      highlights: [
-        'Real-time currency exchange engine',
-        '35% transaction speed improvement',
-        'Event-driven observability',
-      ],
-      iosUrl: 'https://apps.apple.com/app/zojapay/id1609945566',
-      androidUrl:
-          'https://play.google.com/store/apps/details?id=com.zojatech.zojapay',
     ),
 
     PortfolioModel(
@@ -70,7 +51,6 @@ abstract class PortfolioData {
         'Flutter',
         'Investments',
         'Firebase',
-        'Fintech',
         'Clean Architecture',
       ],
       highlights: [
@@ -144,7 +124,7 @@ abstract class PortfolioData {
       period: 'Feb 2020 – Oct 2021',
       description:
           'Lifestyle & payments app by Sterling Bank targeting '
-          'younger demographics — seamless banking, spending features, '
+          'younger demographics with seamless banking, spending features, '
           'and cross-platform Flutter codebase.',
       tags: ['Flutter', 'Lifestyle Banking', 'Payments', 'MVVM'],
       highlights: [

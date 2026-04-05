@@ -21,7 +21,7 @@ class BookingSection extends StatelessWidget {
         child: const BookingOptionCard(
           title: 'Calendly',
           description:
-              'Book a 30 or 60-minute session — async scheduling, no email ping-pong.',
+              'Book a 30 or 60-minute session. Async scheduling, no back and forth.',
           ctaLabel: 'Book on Calendly',
           url: AppStrings.calendlyUrl,
           icon: Icons.calendar_today,

@@ -24,7 +24,7 @@ class PortfolioSection extends StatelessWidget {
               label: AppStrings.portfolioLabel,
               title: AppStrings.portfolioTitle,
               subtitle:
-                  'Mobile apps shipped to production — tap or hover any card for details.',
+                  'Mobile apps shipped to production. Tap or hover any card for details.',
             ),
           ),
           AdaptiveGrid(
