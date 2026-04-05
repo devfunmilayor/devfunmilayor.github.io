@@ -7,10 +7,10 @@ abstract class PortfolioData {
       company: 'Zabira Technologies',
       period: 'Feb 2023 – Nov 2024',
       description:
-          'Decentralized crypto wallet & consumer fintech platform. '
-          'Built from greenfield to production, owning mobile architecture, '
-          'backend services, and release pipelines.',
-      tags: ['Flutter', 'Crypto Wallet', 'Golang', 'gRPC', 'Clean Architecture'],
+          'Cross-platform Flutter app with Go backend and native iOS/Android integrations. '
+          'Built from zero to production, owning mobile architecture, '
+          'gRPC services, and release pipelines.',
+      tags: ['Flutter', 'Go', 'gRPC', 'Native iOS/Android', 'Clean Architecture'],
       highlights: [
         '0 → production full ownership',
         'Real-time customer to agent chat',
@@ -25,10 +25,10 @@ abstract class PortfolioData {
       company: 'Zojatech',
       period: 'Aug 2022 – Nov 2023',
       description:
-          'Cross-border money transfer & fintech platform with '
-          'Flutter cross-platform UI and native Kotlin/Swift modules '
-          'for performance-critical features.',
-      tags: ['Flutter', 'Kotlin', 'Swift', 'CI/CD'],
+          'Cross-border payments platform built with Flutter and native Kotlin/Swift modules '
+          'for performance-critical features. Go-powered backend services '
+          'for real-time FX processing.',
+      tags: ['Flutter', 'Go', 'Kotlin', 'Swift', 'CI/CD'],
       highlights: [
         '30% crash rate reduction',
         '35% faster cross-border processing',
@@ -44,15 +44,9 @@ abstract class PortfolioData {
       company: 'Zojatech',
       period: 'Aug 2022 – Nov 2023',
       description:
-          'Investment & portfolio management platform for AIICO Insurance. '
-          'Flutter-powered with Firebase backend, real-time portfolio '
-          'tracking, and proactive monitoring.',
-      tags: [
-        'Flutter',
-        'Investments',
-        'Firebase',
-        'Clean Architecture',
-      ],
+          'Investment platform for AIICO Insurance. Flutter frontend with Firebase backend, '
+          'real-time portfolio tracking, and native iOS/Android push notification integrations.',
+      tags: ['Flutter', 'Firebase', 'Native iOS', 'Native Android', 'Clean Architecture'],
       highlights: [
         'Real-time portfolio tracking',
         'Proactive monitoring & observability',
@@ -68,10 +62,9 @@ abstract class PortfolioData {
       company: 'CredPal',
       period: 'May 2021 – Sep 2022',
       description:
-          'Buy-now-pay-later consumer credit platform with modular '
-          'MVVM + DDD architecture and Flutter cross-platform UI '
-          'with native Kotlin/Swift modules.',
-      tags: ['Flutter', 'BNPL', 'MVVM', 'DDD', 'Kotlin', 'Swift'],
+          'Buy-now-pay-later platform with Flutter cross-platform UI and native Kotlin/Swift modules. '
+          'MVVM + DDD architecture with reusable component library.',
+      tags: ['Flutter', 'Kotlin', 'Swift', 'MVVM', 'DDD'],
       highlights: [
         '34% navigation & usability improvement',
         '20% engagement increase',
@@ -86,10 +79,9 @@ abstract class PortfolioData {
       company: 'Sterling Bank',
       period: 'Feb 2020 – Oct 2021',
       description:
-          'Core retail banking super-app for Sterling Bank. '
-          'Migrated from MVP to MVVM, scaled to serve millions of users '
-          'with automated CI/CD pipelines.',
-      tags: ['Flutter', 'Banking', 'MVVM', 'CI/CD', 'Scale'],
+          'Core retail banking super-app for Sterling Bank. Flutter with native iOS/Android integrations, '
+          'migrated from MVP to MVVM and scaled to millions of users.',
+      tags: ['Flutter', 'Native iOS', 'Native Android', 'MVVM', 'CI/CD'],
       highlights: [
         'Millions of active users',
         '50% fewer release errors',
@@ -105,10 +97,9 @@ abstract class PortfolioData {
       company: 'Sterling Bank',
       period: 'Feb 2020 – Oct 2021',
       description:
-          'Business & corporate banking platform for Sterling Bank. '
-          'Architected for enterprise-grade transaction volumes with '
-          'automated testing and release pipelines.',
-      tags: ['Flutter', 'Corporate Banking', 'MVVM', 'Automated Testing'],
+          'Business banking platform built with Flutter and native integrations for '
+          'enterprise-grade transaction volumes. Automated testing and Fastlane release pipelines.',
+      tags: ['Flutter', 'Kotlin', 'Swift', 'Corporate Banking', 'Fastlane'],
       highlights: [
         'Enterprise transaction volumes',
         'Automated CI/CD pipeline',
@@ -123,10 +114,9 @@ abstract class PortfolioData {
       company: 'Sterling Bank',
       period: 'Feb 2020 – Oct 2021',
       description:
-          'Lifestyle & payments app by Sterling Bank targeting '
-          'younger demographics with seamless banking, spending features, '
-          'and cross-platform Flutter codebase.',
-      tags: ['Flutter', 'Lifestyle Banking', 'Payments', 'MVVM'],
+          'Lifestyle and payments app for Sterling Bank targeting younger users. '
+          'Flutter with native iOS/Android payment integrations and seamless cross-platform UX.',
+      tags: ['Flutter', 'Native iOS', 'Native Android', 'Payments', 'MVVM'],
       highlights: [
         'Youth-focused banking UX',
         'Seamless payments integration',

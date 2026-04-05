@@ -2,28 +2,29 @@ abstract class AppStrings {
   // Personal
   static const String name = 'Funmi Layo';
   static const String displayName = 'Dev.Funmi';
-  static const String title = 'Senior Flutter & Mobile Engineer';
+  static const String title = 'Senior Fullstack Mobile Engineer';
   static const String tagline =
-      'I build mobile products that reach millions. Architecture to App Store, owned end to end.';
+      'I build mobile products end to end. Flutter on the surface, Go underneath, native Swift and Kotlin where it counts.';
   static const String availability = 'Available for new opportunities';
   static const String location = 'Lagos, Nigeria';
   static const String email = 'tfunmii@gmail.com';
 
   // About bio
   static const String bio =
-      "Six years shipping Flutter, iOS/Swift, and Android/Kotlin apps to production. "
-      "I've led mobile architecture on products serving millions of daily users across "
-      "banking, crypto wallets, and enterprise software.\n\n"
-      "I own the full delivery lifecycle: system design, CI/CD pipelines, on-device ML, "
-      "and release engineering. Currently a Lead Engineer at TruePath Vision building a "
-      "secure biometric SDK at scale. Deepening expertise in platform engineering and developer tooling.";
+      "Over Six years building production mobile apps and the backends that power them. "
+      "I work across Flutter, native iOS/Swift, and Android/Kotlin for the mobile layer, "
+      "and Go for backend services: gRPC, REST, and event-driven systems.\n\n"
+      "I've shipped apps serving millions of users in banking, crypto, and enterprise. "
+      "At TruePath Vision I lead mobile architecture for a cross-platform biometric SDK "
+      "with native iOS and Android integrations. I own the full stack: system design, "
+      "native platform channels, Go microservices, CI/CD, and App Store releases.";
 
   // Hero typewriter roles
   static const List<String> roles = [
-    'Flutter Engineer',
-    'Mobile Architect',
-    'Product Engineer',
-    'iOS & Android Developer',
+    'Fullstack Mobile Engineer',
+    'Flutter & Go Developer',
+    'iOS & Android Engineer',
+    'Native Integration Specialist',
     'Learning Platform Engineering',
   ];
 

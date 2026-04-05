@@ -89,7 +89,7 @@ class _QuickFacts extends StatelessWidget {
     {'icon': '💼', 'label': 'Experience', 'value': '6+ Years'},
     {'icon': '🕐', 'label': 'Timezone', 'value': 'WAT (UTC+1)'},
     {'icon': '✅', 'label': 'Status', 'value': 'Open to opportunities'},
-    {'icon': '🎯', 'label': 'Focus', 'value': 'Flutter · Mobile · Backend'},
+    {'icon': '🎯', 'label': 'Focus', 'value': 'Flutter · Go · iOS · Android'},
   ];
 
   @override

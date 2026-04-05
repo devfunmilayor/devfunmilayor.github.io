@@ -42,7 +42,7 @@ abstract class AppTypography {
 
   static const TextStyle headingM = TextStyle(
     fontFamily: _sans,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
     height: 1.4,
@@ -50,7 +50,7 @@ abstract class AppTypography {
 
   static const TextStyle headingS = TextStyle(
     fontFamily: _sans,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
     height: 1.4,
@@ -58,7 +58,7 @@ abstract class AppTypography {
 
   static const TextStyle bodyLarge = TextStyle(
     fontFamily: _sans,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColors.textMuted,
     height: 1.7,
@@ -66,7 +66,7 @@ abstract class AppTypography {
 
   static const TextStyle bodyMedium = TextStyle(
     fontFamily: _sans,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
     color: AppColors.textMuted,
     height: 1.6,
@@ -74,7 +74,7 @@ abstract class AppTypography {
 
   static const TextStyle bodySmall = TextStyle(
     fontFamily: _sans,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
     color: AppColors.textMuted,
     height: 1.5,
@@ -90,7 +90,7 @@ abstract class AppTypography {
 
   static const TextStyle labelM = TextStyle(
     fontFamily: _sans,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.w500,
     color: AppColors.textMuted,
     letterSpacing: 0.5,
@@ -98,7 +98,7 @@ abstract class AppTypography {
 
   static const TextStyle mono = TextStyle(
     fontFamily: _mono,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
     color: AppColors.accent,
     height: 1.6,
@@ -106,7 +106,7 @@ abstract class AppTypography {
 
   static const TextStyle monoLarge = TextStyle(
     fontFamily: _mono,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
     color: AppColors.accent,
     height: 1.6,

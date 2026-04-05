@@ -7,10 +7,10 @@ abstract class SkillsData {
       category: 'Languages & Frameworks',
       emoji: '⚡',
       skills: [
-        SkillModel(label: 'Dart / Flutter'),
-        SkillModel(label: 'Kotlin'),
-        SkillModel(label: 'Swift'),
-        SkillModel(label: 'Golang'),
+        SkillModel(label: 'Flutter / Dart'),
+        SkillModel(label: 'Go (Golang)'),
+        SkillModel(label: 'Swift (Native iOS)'),
+        SkillModel(label: 'Kotlin (Native Android)'),
       ],
     ),
     SkillCategoryModel(
@@ -29,12 +29,24 @@ abstract class SkillsData {
       category: 'Backend & Cloud',
       emoji: '☁️',
       skills: [
-        SkillModel(label: 'Firebase'),
-        SkillModel(label: 'gRPC'),
+        SkillModel(label: 'Go / gRPC'),
         SkillModel(label: 'REST APIs'),
-        SkillModel(label: 'GraphQL'),
+        SkillModel(label: 'Firebase'),
         SkillModel(label: 'PostgreSQL'),
+        SkillModel(label: 'GraphQL'),
         SkillModel(label: 'DartFrog'),
+      ],
+    ),
+    SkillCategoryModel(
+      category: 'Native Integration',
+      emoji: '📱',
+      skills: [
+        SkillModel(label: 'Platform Channels'),
+        SkillModel(label: 'iOS Vision Framework'),
+        SkillModel(label: 'Android ML Kit'),
+        SkillModel(label: 'Secure Enclave'),
+        SkillModel(label: 'Biometric Auth'),
+        SkillModel(label: 'Push Notifications'),
       ],
     ),
     SkillCategoryModel(
