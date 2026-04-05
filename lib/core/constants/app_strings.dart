@@ -69,7 +69,7 @@ abstract class AppStrings {
 
   // Social URLs
   static const String githubUrl = 'https://github.com/devfunmilayor/devfunmilayor';
-  static const String linkedinUrl = 'https://linkedin.com/in/devfunmi';
+  static const String linkedinUrl = 'https://www.linkedin.com/in/devfunmilayor/';
   static const String twitterUrl = 'https://twitter.com/devfunmi';
 
   // Booking URLs

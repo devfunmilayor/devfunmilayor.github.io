@@ -107,7 +107,7 @@ class _ContactInfo extends StatelessWidget {
         const SizedBox(height: AppSpacing.sm),
         _ContactItem(
           icon: Icons.link,
-          label: 'linkedin.com/in/devfunmi',
+          label: 'linkedin.com/in/devfunmilayor',
           onTap: () => LaunchUtils.open(AppStrings.linkedinUrl),
         ),
       ],
