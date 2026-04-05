@@ -1,9 +1,9 @@
+import 'package:devfunmi/core/constants/app_animations.dart';
+import 'package:devfunmi/core/constants/app_colors.dart';
+import 'package:devfunmi/core/constants/app_spacing.dart';
+import 'package:devfunmi/core/constants/app_typography.dart';
+import 'package:devfunmi/core/utils/launch_utils.dart';
 import 'package:flutter/material.dart';
-import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_typography.dart';
-import '../../core/constants/app_spacing.dart';
-import '../../core/constants/app_animations.dart';
-import '../../core/utils/launch_utils.dart';
 import 'app_store_type.dart';
 
 class StoreBadge extends StatefulWidget {
