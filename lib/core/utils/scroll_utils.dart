@@ -21,24 +21,28 @@ abstract class ScrollUtils {
   }
 
   static void scrollTo(String section) {
-    final ctx = sectionKeys[section]?.currentContext;
-    if (ctx == null || _controller == null) return;
+    // Use addPostFrameCallback so layout is guaranteed complete before we
+    // read render object positions — critical for sections below the fold.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final ctx = sectionKeys[section]?.currentContext;
+      if (ctx == null || _controller == null) return;
 
-    final box = ctx.findRenderObject() as RenderBox?;
-    if (box == null || !box.hasSize) return;
+      final box = ctx.findRenderObject() as RenderBox?;
+      if (box == null) return;
 
-    // localToGlobal gives the widget's current Y on screen.
-    // Adding the current scroll offset gives its absolute position in the
-    // document, then subtract nav height so it isn't hidden behind the bar.
-    final screenY = box.localToGlobal(Offset.zero).dy;
-    final target = (_controller!.offset + screenY - AppSpacing.navHeight)
-        .clamp(0.0, _controller!.position.maxScrollExtent);
+      // localToGlobal gives the widget's current Y on screen.
+      // Adding the current scroll offset gives its absolute position in the
+      // document, then subtract nav height so it isn't hidden behind the bar.
+      final screenY = box.localToGlobal(Offset.zero).dy;
+      final target = (_controller!.offset + screenY - AppSpacing.navHeight)
+          .clamp(0.0, double.maxFinite);
 
-    _controller!.animateTo(
-      target,
-      duration: const Duration(milliseconds: 600),
-      curve: Curves.easeInOutCubic,
-    );
+      _controller!.animateTo(
+        target,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeInOutCubic,
+      );
+    });
   }
 
   static String activeSection(double scrollOffset) {

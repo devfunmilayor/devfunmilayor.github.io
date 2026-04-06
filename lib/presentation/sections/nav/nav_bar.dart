@@ -49,10 +49,13 @@ class _NavBarState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
+    final isDesktop = ResponsiveLayout.isDesktop(context);
     final isMobile = ResponsiveLayout.isMobile(context);
     final hPad = isMobile
         ? AppSpacing.pagePadMobile
-        : AppSpacing.pagePadDesktop;
+        : isDesktop
+            ? AppSpacing.pagePadDesktop
+            : AppSpacing.pagePadTablet;
 
     return AnimatedContainer(
       duration: AppAnimations.navBlurDuration,
@@ -73,7 +76,7 @@ class _NavBarState extends State<NavBar> {
             children: [
               const NavLogo(),
               const Spacer(),
-              if (!isMobile) ...[
+              if (isDesktop) ...[
                 NavLinks(
                   activeSection: widget.activeSection,
                   onLinkTap: widget.onNavTap,
@@ -84,7 +87,7 @@ class _NavBarState extends State<NavBar> {
                   icon: Icons.download,
                   onTap: downloadCV,
                 ),
-              ] else ...[
+              ] else if (!isDesktop) ...[
                 Builder(
                   builder: (context) => IconButton(
                     icon: const Icon(

@@ -79,7 +79,10 @@ class MobileDrawer extends StatelessWidget {
                     isActive: isActive,
                     onTap: () {
                       Navigator.of(context).pop();
-                      onLinkTap(link['key']!);
+                      Future.delayed(
+                        const Duration(milliseconds: 300),
+                        () => onLinkTap(link['key']!),
+                      );
                     },
                   );
                 }).toList(),
