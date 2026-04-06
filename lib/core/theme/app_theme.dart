@@ -8,7 +8,7 @@ abstract class AppTheme {
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.background,
-      fontFamily: 'Inter',
+      fontFamily: 'Roboto',
       colorScheme: const ColorScheme.dark(
         surface: AppColors.surface,
         primary: AppColors.accent,
