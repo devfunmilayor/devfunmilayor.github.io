@@ -62,7 +62,7 @@ class _ExperienceNodeState extends State<ExperienceNode>
                 widget.data.isCurrent && _pulseAnim != null
                     ? AnimatedBuilder(
                         animation: _pulseAnim!,
-                        builder: (_, _) => Container(
+                        builder: (context, _) => Container(
                           width: 14,
                           height: 14,
                           decoration: BoxDecoration(
