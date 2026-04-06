@@ -59,7 +59,7 @@ abstract class ExperienceData {
         'Built reusable Flutter UI library and native platform channel service layer',
         'Established unit and integration testing with CI/CD pipelines for both platforms',
       ],
-      tags: ['Flutter', 'MVVM', 'DDD', 'Kotlin', 'Swift', 'DataDog', 'CI/CD'],
+      tags: ['Flutter', 'MVVM', 'DDD', 'Kotlin', 'Swift', 'DataDog', 'Fastlane', 'GitHub Actions', 'CI/CD'],
     ),
 
     ExperienceModel(
@@ -70,10 +70,10 @@ abstract class ExperienceData {
       highlights: [
         'Migrated OneBank, Sterling Pro and Switch from MVP to MVVM on iOS and Android',
         'Scaled apps to serve millions of active users across both platforms',
-        'Reduced manual release errors 50% via automated CI/CD with Fastlane',
+        'Reduced manual release errors 50% via automated CI/CD with Azure Pipelines',
         'Introduced automated testing across all banking platforms',
       ],
-      tags: ['Flutter', 'MVVM', 'iOS', 'Android', 'Fastlane', 'CI/CD'],
+      tags: ['Flutter', 'MVVM', 'iOS', 'Android', 'Azure', 'CI/CD'],
     ),
 
     ExperienceModel(
