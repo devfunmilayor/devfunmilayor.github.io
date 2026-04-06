@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 abstract class AppTypography {
-  static const String _sans = 'Roboto';
+  static const String _sans = 'Urbanist';
   static const String _mono = 'JetBrainsMono';
 
   static const TextStyle displayLarge = TextStyle(

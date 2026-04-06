@@ -35,6 +35,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
       onEnter: (_) => Future.microtask(() { if (mounted) setState(() => _hovered = true); }),
       onExit: (_) => Future.microtask(() { if (mounted) setState(() => _hovered = false); }),
       child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
         onTap: widget.onTap,
         child: AnimatedContainer(
           duration: AppAnimations.hoverDuration,
