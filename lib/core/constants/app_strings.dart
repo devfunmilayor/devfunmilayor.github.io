@@ -25,7 +25,7 @@ abstract class AppStrings {
     'Flutter & Go Developer',
     'iOS & Android Engineer',
     'Native Integration Specialist',
-    'Learning Platform Engineering',
+    'Learning Backstage & IDPs',
   ];
 
   // Nav sections

@@ -4,6 +4,7 @@ class ExperienceModel {
   final String role;
   final String period;
   final List<String> highlights;
+  final List<String> tags;
   final bool isCurrent;
 
   const ExperienceModel({
@@ -12,6 +13,7 @@ class ExperienceModel {
     required this.role,
     required this.period,
     required this.highlights,
+    this.tags = const [],
     this.isCurrent = false,
   });
 }

@@ -4,6 +4,7 @@ import '../../../core/constants/app_typography.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/constants/app_animations.dart';
 import '../../../data/models/experience_model.dart';
+import '../../../widgets/chips/tag_chip.dart';
 import '../../../widgets/glass/glass_card.dart';
 
 class ExperienceNode extends StatefulWidget {
@@ -196,6 +197,18 @@ class _ExperienceNodeState extends State<ExperienceNode>
                       ),
                     ),
                   ),
+
+                  // Tech tags
+                  if (widget.data.tags.isNotEmpty) ...[
+                    const SizedBox(height: AppSpacing.md),
+                    Wrap(
+                      spacing: AppSpacing.sm,
+                      runSpacing: AppSpacing.sm,
+                      children: widget.data.tags
+                          .map((t) => TagChip(label: t, hoverable: true))
+                          .toList(),
+                    ),
+                  ],
                 ],
               ),
             ),

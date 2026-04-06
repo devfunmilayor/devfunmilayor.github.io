@@ -131,7 +131,18 @@ class _HighlightedBio extends StatelessWidget {
                   ' with native iOS and Android integrations. I own the full stack: '
                   'system design, native platform channels, '),
           TextSpan(text: 'Go microservices', style: highlight),
-          const TextSpan(text: ', CI/CD, and App Store releases.'),
+          const TextSpan(
+              text: ', CI/CD, and App Store releases.\n\n'),
+          const TextSpan(text: 'Currently expanding into '),
+          TextSpan(text: 'Platform Engineering', style: highlight),
+          const TextSpan(text: ' — studying '),
+          TextSpan(text: 'Backstage', style: highlight),
+          const TextSpan(text: ', '),
+          TextSpan(text: 'Internal Developer Platforms', style: highlight),
+          const TextSpan(
+              text:
+                  ', and golden path tooling to understand how infrastructure '
+                  'teams scale developer experience at org level.'),
         ],
       ),
     );

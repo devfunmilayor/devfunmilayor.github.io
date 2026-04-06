@@ -15,6 +15,7 @@ abstract class ExperienceData {
         'Wrote high-throughput API Gateway in Go, reducing end-to-end latency significantly',
         'Drove TDD, privacy-aware data flows, and CI/CD with cross-functional ML teams',
       ],
+      tags: ['Flutter', 'Go', 'Swift', 'Kotlin', 'Docker', 'AWS', 'GitHub Actions', 'CI/CD'],
     ),
 
     ExperienceModel(
@@ -29,6 +30,7 @@ abstract class ExperienceData {
         'Architected real-time event-driven customer to agent chat system',
         'Sustained 99.9% uptime across mobile and backend via CI/CD and Clean Architecture',
       ],
+      tags: ['Flutter', 'Go', 'gRPC', 'Kubernetes', 'Docker', 'GitOps', 'Clean Architecture'],
     ),
 
     ExperienceModel(
@@ -43,6 +45,7 @@ abstract class ExperienceData {
         'Designed event-driven observability layer across mobile and backend systems',
         'Enforced Clean Architecture, TDD, and CI/CD across all products',
       ],
+      tags: ['Flutter', 'Swift', 'Kotlin', 'Firebase', 'DataDog', 'Sentry', 'GitHub Actions', 'AWS'],
     ),
 
     ExperienceModel(
@@ -56,6 +59,7 @@ abstract class ExperienceData {
         'Built reusable Flutter UI library and native platform channel service layer',
         'Established unit and integration testing with CI/CD pipelines for both platforms',
       ],
+      tags: ['Flutter', 'Kotlin', 'Swift', 'DataDog', 'GitHub Actions', 'TDD', 'MVVM'],
     ),
 
     ExperienceModel(
@@ -69,6 +73,7 @@ abstract class ExperienceData {
         'Reduced manual release errors 50% via automated CI/CD with Fastlane',
         'Introduced automated testing across all banking platforms',
       ],
+      tags: ['Flutter', 'iOS', 'Android', 'Fastlane', 'CI/CD', 'Firebase'],
     ),
 
     ExperienceModel(
@@ -81,6 +86,7 @@ abstract class ExperienceData {
         'Integrated Firebase for analytics and push notifications on both platforms',
         'Decreased crash rates by 30% through native platform optimisations',
       ],
+      tags: ['Flutter', 'Firebase', 'iOS', 'Android'],
     ),
   ];
 }

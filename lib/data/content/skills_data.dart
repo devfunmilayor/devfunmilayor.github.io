@@ -11,6 +11,7 @@ abstract class SkillsData {
         SkillModel(label: 'Go (Golang)'),
         SkillModel(label: 'Swift (Native iOS)'),
         SkillModel(label: 'Kotlin (Native Android)'),
+        SkillModel(label: 'Python'),
       ],
     ),
     SkillCategoryModel(
@@ -34,7 +35,20 @@ abstract class SkillsData {
         SkillModel(label: 'Firebase'),
         SkillModel(label: 'PostgreSQL'),
         SkillModel(label: 'GraphQL'),
-        SkillModel(label: 'DartFrog'),
+        SkillModel(label: 'AWS'),
+        SkillModel(label: 'GCP'),
+      ],
+    ),
+    SkillCategoryModel(
+      category: 'Cloud Infrastructure',
+      emoji: '🐳',
+      skills: [
+        SkillModel(label: 'Docker'),
+        SkillModel(label: 'Kubernetes'),
+        SkillModel(label: 'Containerization'),
+        SkillModel(label: 'Terraform'),
+        SkillModel(label: 'GitOps'),
+        SkillModel(label: 'AWS CI/CD'),
       ],
     ),
     SkillCategoryModel(
@@ -68,8 +82,19 @@ abstract class SkillsData {
         SkillModel(label: 'DataDog'),
         SkillModel(label: 'Sentry'),
         SkillModel(label: 'Crashlytics'),
+        SkillModel(label: 'Monitoring & Observability'),
         SkillModel(label: 'OAuth2'),
         SkillModel(label: 'Biometric Auth'),
+      ],
+    ),
+    SkillCategoryModel(
+      category: 'Currently Learning',
+      emoji: '🚀',
+      skills: [
+        SkillModel(label: 'Platform Engineering'),
+        SkillModel(label: 'Backstage'),
+        SkillModel(label: 'Internal Developer Platforms'),
+        SkillModel(label: 'IDPs & Golden Paths'),
       ],
     ),
   ];
