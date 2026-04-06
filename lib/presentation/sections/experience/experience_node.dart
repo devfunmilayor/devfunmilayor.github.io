@@ -192,6 +192,7 @@ class _ExperienceNodeState extends State<ExperienceNode>
                               style: AppTypography.bodySmall.copyWith(
                                 color: AppColors.textSecondary,
                               ),
+                              textAlign: TextAlign.justify,
                             ),
                           ),
                         ],

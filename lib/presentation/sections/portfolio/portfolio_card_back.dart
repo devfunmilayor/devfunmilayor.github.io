@@ -76,13 +76,14 @@ class PortfolioCardBack extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('→ ', style: AppTypography.mono),
+                   Text('→ ', style: AppTypography.mono),
                   Expanded(
                     child: Text(
                       h,
                       style: AppTypography.bodySmall.copyWith(
                         color: AppColors.textSecondary,
                       ),
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],

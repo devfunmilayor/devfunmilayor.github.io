@@ -125,6 +125,7 @@ class _PortfolioCardState extends State<PortfolioCard>
             style: AppTypography.bodySmall.copyWith(
               color: AppColors.textSecondary,
             ),
+            textAlign: TextAlign.justify,
             maxLines: 4,
             overflow: TextOverflow.ellipsis,
           ),

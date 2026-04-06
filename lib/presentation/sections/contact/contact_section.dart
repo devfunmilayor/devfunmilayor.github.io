@@ -89,7 +89,7 @@ class _ContactInfo extends StatelessWidget {
           ),
         ),
         const SizedBox(height: AppSpacing.md),
-        Text(AppStrings.contactSubtitle, style: AppTypography.bodyLarge),
+        Text(AppStrings.contactSubtitle, style: AppTypography.bodyLarge, textAlign: TextAlign.justify),
         const SizedBox(height: AppSpacing.xl),
         _ContactItem(
           icon: HugeIcons.strokeRoundedMail01,

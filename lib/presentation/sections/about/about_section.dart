@@ -170,6 +170,7 @@ class _BioBlock extends StatelessWidget {
           'with on-device ML and native iOS/Android integrations. I cover the full stack: '
           'system design, native platform channels, Go microservices, CI/CD, and App Store releases.',
           style: AppTypography.bodyLarge,
+          textAlign: TextAlign.justify,
         ),
       ],
     );

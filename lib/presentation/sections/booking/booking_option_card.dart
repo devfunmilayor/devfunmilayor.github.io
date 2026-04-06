@@ -51,7 +51,7 @@ class BookingOptionCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: AppSpacing.sm),
-          Text(description, style: AppTypography.bodyMedium),
+          Text(description, style: AppTypography.bodyMedium, textAlign: TextAlign.justify),
           const SizedBox(height: AppSpacing.xl),
           PrimaryButton(
             label: ctaLabel,

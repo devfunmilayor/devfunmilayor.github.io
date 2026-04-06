@@ -38,7 +38,7 @@ class SectionHeading extends StatelessWidget {
         Text(title, style: titleStyle),
         if (subtitle != null) ...[
           const SizedBox(height: AppSpacing.md),
-          Text(subtitle!, style: AppTypography.bodyLarge),
+          Text(subtitle!, style: AppTypography.bodyLarge, textAlign: TextAlign.justify),
         ],
         const SizedBox(height: AppSpacing.xxl),
       ],

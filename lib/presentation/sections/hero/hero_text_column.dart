@@ -72,6 +72,7 @@ class HeroTextColumn extends StatelessWidget {
             child: Text(
               AppStrings.tagline,
               style: AppTypography.bodyLarge,
+              textAlign: TextAlign.justify,
             ),
           ),
         ),
