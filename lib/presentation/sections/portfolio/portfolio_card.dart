@@ -113,14 +113,9 @@ class _PortfolioCardState extends State<PortfolioCard>
           // Company
           Text(
             widget.data.company,
-            style: AppTypography.bodySmall.copyWith(
-              color: AppColors.textMuted,
-            ),
+            style: AppTypography.bodySmall.copyWith(color: AppColors.textMuted),
           ),
-          Text(
-            widget.data.period,
-            style: AppTypography.monoSmall,
-          ),
+          Text(widget.data.period, style: AppTypography.monoSmall),
           const SizedBox(height: AppSpacing.md),
 
           // Description
@@ -140,8 +135,7 @@ class _PortfolioCardState extends State<PortfolioCard>
             runSpacing: AppSpacing.xs,
             children: [
               ...previewTags.map((t) => TagChip(label: t)),
-              if (extraCount > 0)
-                TagChip(label: '+$extraCount more'),
+              if (extraCount > 0) TagChip(label: '+$extraCount more'),
             ],
           ),
           const SizedBox(height: AppSpacing.md),
