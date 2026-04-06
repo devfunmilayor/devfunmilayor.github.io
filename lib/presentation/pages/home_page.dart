@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _scrollController.addListener(_updateActiveSection);
+    ScrollUtils.registerController(_scrollController);
 
     if (widget.initialSection != null) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
