@@ -17,7 +17,7 @@ abstract class AppTheme {
         onPrimary: AppColors.background,
         onSurface: AppColors.textPrimary,
       ),
-      textTheme: const TextTheme(
+      textTheme:  TextTheme(
         displayLarge: AppTypography.displayLarge,
         displayMedium: AppTypography.displayMedium,
         displaySmall: AppTypography.displaySmall,
