@@ -12,6 +12,11 @@ class DevFunmiApp extends StatelessWidget {
       theme: AppTheme.dark,
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
+      builder: (context, child) => DefaultTextStyle(
+        style: DefaultTextStyle.of(context).style,
+        textAlign: TextAlign.justify,
+        child: child!,
+      ),
     );
   }
 }
