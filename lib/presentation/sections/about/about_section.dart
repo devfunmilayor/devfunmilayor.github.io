@@ -283,7 +283,7 @@ class _StatsGrid extends StatelessWidget {
   static const _stats = [
     _Stat('6+', 'Years Experience'),
     _Stat('10+', 'Apps Shipped'),
-    _Stat('3M+', 'Users Served'),
+    _Stat('99.9%', 'Uptime Record'),
     _Stat('3', 'Industries'),
   ];
 
