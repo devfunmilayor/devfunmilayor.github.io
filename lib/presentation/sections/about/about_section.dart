@@ -4,8 +4,8 @@ import 'package:devfunmi/core/constants/app_strings.dart';
 import 'package:devfunmi/core/constants/app_typography.dart';
 import 'package:devfunmi/core/utils/scroll_utils.dart';
 import 'package:devfunmi/widgets/animations/fade_slide_in.dart';
-import 'package:devfunmi/widgets/chips/tag_chip.dart';
 import 'package:devfunmi/widgets/glass/glass_card.dart';
+import 'package:devfunmi/widgets/layout/responsive_layout.dart';
 import 'package:devfunmi/widgets/layout/section_wrapper.dart';
 import 'package:devfunmi/widgets/text/section_heading.dart';
 import 'package:flutter/material.dart';
@@ -26,38 +26,10 @@ class AboutSection extends StatelessWidget {
               title: AppStrings.aboutTitle,
             ),
           ),
-
-          // Bio
-          FadeSlideIn(
-            delay: const Duration(milliseconds: 100),
-            child: const Text(
-              AppStrings.bio,
-              style: AppTypography.bodyLarge,
-            ),
-          ),
-
-          const SizedBox(height: AppSpacing.xxl),
-
-          // Stats
-          FadeSlideIn(
-            delay: const Duration(milliseconds: 200),
-            child: const _StatsRow(),
-          ),
-
-          const SizedBox(height: AppSpacing.xl),
-
-          // Focus areas
-          FadeSlideIn(
-            delay: const Duration(milliseconds: 300),
-            child: const _FocusAreas(),
-          ),
-
-          const SizedBox(height: AppSpacing.xl),
-
-          // Availability
-          FadeSlideIn(
-            delay: const Duration(milliseconds: 400),
-            child: const _AvailabilityBadge(),
+          const SizedBox(height: AppSpacing.lg),
+          ResponsiveLayout(
+            desktop: const _DesktopLayout(),
+            mobile: const _MobileLayout(),
           ),
         ],
       ),
@@ -65,24 +37,282 @@ class AboutSection extends StatelessWidget {
   }
 }
 
-// ── Stats ──────────────────────────────────────────────────────────────────
+// ── Desktop ────────────────────────────────────────────────────────────────
 
-class _StatsRow extends StatelessWidget {
-  const _StatsRow();
+class _DesktopLayout extends StatelessWidget {
+  const _DesktopLayout();
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Left — bio + meta
+        Expanded(
+          flex: 5,
+          child: FadeSlideIn(
+            delay: const Duration(milliseconds: 100),
+            child: const _LeftPanel(),
+          ),
+        ),
+        const SizedBox(width: AppSpacing.xxl),
+        // Right — stats + pillars
+        Expanded(
+          flex: 4,
+          child: FadeSlideIn(
+            delay: const Duration(milliseconds: 200),
+            child: const _RightPanel(),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Mobile ─────────────────────────────────────────────────────────────────
+
+class _MobileLayout extends StatelessWidget {
+  const _MobileLayout();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        FadeSlideIn(
+          delay: const Duration(milliseconds: 100),
+          child: const _BioBlock(),
+        ),
+        const SizedBox(height: AppSpacing.xl),
+        FadeSlideIn(
+          delay: const Duration(milliseconds: 150),
+          child: const _MetaBlock(),
+        ),
+        const SizedBox(height: AppSpacing.xl),
+        FadeSlideIn(
+          delay: const Duration(milliseconds: 200),
+          child: const _StatsGrid(),
+        ),
+        const SizedBox(height: AppSpacing.xl),
+        FadeSlideIn(
+          delay: const Duration(milliseconds: 250),
+          child: const _WhatIDoSection(),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Left Panel ─────────────────────────────────────────────────────────────
+
+class _LeftPanel extends StatelessWidget {
+  const _LeftPanel();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _BioBlock(),
+        SizedBox(height: AppSpacing.xl),
+        _MetaBlock(),
+      ],
+    );
+  }
+}
+
+// ── Right Panel ────────────────────────────────────────────────────────────
+
+class _RightPanel extends StatelessWidget {
+  const _RightPanel();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _StatsGrid(),
+        SizedBox(height: AppSpacing.xl),
+        _WhatIDoSection(),
+      ],
+    );
+  }
+}
+
+// ── Bio Block ──────────────────────────────────────────────────────────────
+
+class _BioBlock extends StatelessWidget {
+  const _BioBlock();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Highlighted opening line
+        Text(
+          'I build mobile products end to end.',
+          style: AppTypography.headingL.copyWith(
+            color: AppColors.textPrimary,
+            height: 1.4,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        // Bio body
+        Text(
+          'Over six years building production apps and the backends that power them. '
+          'I work across Flutter, native iOS/Swift, and Android/Kotlin for the mobile layer, '
+          'and Go for backend services — gRPC, REST, and event-driven systems.\n\n'
+          "I've shipped apps serving millions of users across banking, crypto, and enterprise. "
+          'At TruePath Vision I lead mobile architecture for a cross-platform biometric SDK '
+          'with on-device ML and native iOS/Android integrations. I own the full stack: '
+          'system design, native platform channels, Go microservices, CI/CD, and App Store releases.',
+          style: AppTypography.bodyLarge,
+        ),
+      ],
+    );
+  }
+}
+
+// ── Meta Block (currently / location / availability) ──────────────────────
+
+class _MetaBlock extends StatelessWidget {
+  const _MetaBlock();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Currently at
+        _MetaRow(
+          icon: Icons.work_outline_rounded,
+          label: 'Currently',
+          value: 'Lead Engineer · TruePath Vision',
+          valueColor: AppColors.accent,
+        ),
+        const SizedBox(height: AppSpacing.md),
+        // Location
+        _MetaRow(
+          icon: Icons.location_on_outlined,
+          label: 'Based in',
+          value: 'Lagos, Nigeria · WAT (UTC+1)',
+        ),
+        const SizedBox(height: AppSpacing.md),
+        // Availability
+        _AvailabilityRow(),
+      ],
+    );
+  }
+}
+
+class _MetaRow extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final String value;
+  final Color? valueColor;
+
+  const _MetaRow({
+    required this.icon,
+    required this.label,
+    required this.value,
+    this.valueColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(icon, size: 16, color: AppColors.textMuted),
+        const SizedBox(width: AppSpacing.sm),
+        Text(
+          '$label  ',
+          style: AppTypography.label.copyWith(
+            color: AppColors.textMuted,
+            letterSpacing: 0.5,
+          ),
+        ),
+        Text(
+          value,
+          style: AppTypography.bodySmall.copyWith(
+            color: valueColor ?? AppColors.textSecondary,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _AvailabilityRow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          width: 8,
+          height: 8,
+          decoration: BoxDecoration(
+            color: AppColors.accent,
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.accent.withValues(alpha: 0.5),
+                blurRadius: 8,
+                spreadRadius: 1,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: AppSpacing.sm),
+        Text(
+          AppStrings.availability,
+          style: AppTypography.bodySmall.copyWith(color: AppColors.accent),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Stats Grid (2×2) ───────────────────────────────────────────────────────
+
+class _StatsGrid extends StatelessWidget {
+  const _StatsGrid();
 
   static const _stats = [
-    _Stat(value: '6+', label: 'Years Experience'),
-    _Stat(value: '10+', label: 'Apps Shipped'),
-    _Stat(value: '3M+', label: 'Users Served'),
-    _Stat(value: '3', label: 'Industries'),
+    _Stat('6+', 'Years Experience'),
+    _Stat('10+', 'Apps Shipped'),
+    _Stat('3M+', 'Users Served'),
+    _Stat('3', 'Industries'),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: AppSpacing.md,
-      runSpacing: AppSpacing.md,
-      children: _stats.map((s) => _StatCard(stat: s)).toList(),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'BY THE NUMBERS',
+          style: AppTypography.label.copyWith(color: AppColors.textMuted),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        Row(
+          children: [
+            Expanded(child: _StatCard(_stats[0])),
+            const SizedBox(width: AppSpacing.md),
+            Expanded(child: _StatCard(_stats[1])),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.md),
+        Row(
+          children: [
+            Expanded(child: _StatCard(_stats[2])),
+            const SizedBox(width: AppSpacing.md),
+            Expanded(child: _StatCard(_stats[3])),
+          ],
+        ),
+      ],
     );
   }
 }
@@ -90,18 +320,18 @@ class _StatsRow extends StatelessWidget {
 class _Stat {
   final String value;
   final String label;
-  const _Stat({required this.value, required this.label});
+  const _Stat(this.value, this.label);
 }
 
 class _StatCard extends StatelessWidget {
   final _Stat stat;
-  const _StatCard({required this.stat});
+  const _StatCard(this.stat);
 
   @override
   Widget build(BuildContext context) {
     return GlassCard(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.lg,
+        horizontal: AppSpacing.md,
         vertical: AppSpacing.md,
       ),
       borderRadius: 12,
@@ -115,12 +345,12 @@ class _StatCard extends StatelessWidget {
               fontWeight: FontWeight.w800,
             ),
           ),
-          const SizedBox(height: 2),
+          const SizedBox(height: 4),
           Text(
             stat.label,
             style: AppTypography.label.copyWith(
               color: AppColors.textMuted,
-              letterSpacing: 0.8,
+              letterSpacing: 0.5,
             ),
           ),
         ],
@@ -129,21 +359,27 @@ class _StatCard extends StatelessWidget {
   }
 }
 
-// ── Focus Areas ────────────────────────────────────────────────────────────
+// ── What I Do ─────────────────────────────────────────────────────────────
 
-class _FocusAreas extends StatelessWidget {
-  const _FocusAreas();
+class _WhatIDoSection extends StatelessWidget {
+  const _WhatIDoSection();
 
-  static const _tags = [
-    'Flutter',
-    'Go',
-    'Swift',
-    'Kotlin',
-    'gRPC',
-    'REST',
-    'CI/CD',
-    'Clean Architecture',
-    'TDD',
+  static const _pillars = [
+    _Pillar(
+      icon: Icons.phone_iphone_rounded,
+      title: 'Mobile Engineering',
+      tags: 'Flutter · Swift · Kotlin',
+    ),
+    _Pillar(
+      icon: Icons.settings_ethernet_rounded,
+      title: 'Backend Systems',
+      tags: 'Go · gRPC · REST · Events',
+    ),
+    _Pillar(
+      icon: Icons.architecture_rounded,
+      title: 'Architecture & DevOps',
+      tags: 'Clean Arch · TDD · CI/CD',
+    ),
   ];
 
   @override
@@ -152,53 +388,73 @@ class _FocusAreas extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'CORE FOCUS',
+          'WHAT I DO',
           style: AppTypography.label.copyWith(color: AppColors.textMuted),
         ),
-        const SizedBox(height: AppSpacing.sm),
-        Wrap(
-          spacing: AppSpacing.sm,
-          runSpacing: AppSpacing.sm,
-          children: _tags.map((t) => TagChip(label: t)).toList(),
+        const SizedBox(height: AppSpacing.md),
+        ..._pillars.map(
+          (p) => Padding(
+            padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+            child: _PillarCard(pillar: p),
+          ),
         ),
       ],
     );
   }
 }
 
-// ── Availability Badge ─────────────────────────────────────────────────────
+class _Pillar {
+  final IconData icon;
+  final String title;
+  final String tags;
+  const _Pillar({required this.icon, required this.title, required this.tags});
+}
 
-class _AvailabilityBadge extends StatelessWidget {
-  const _AvailabilityBadge();
+class _PillarCard extends StatelessWidget {
+  final _Pillar pillar;
+  const _PillarCard({required this.pillar});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          width: 8,
-          height: 8,
-          decoration: BoxDecoration(
-            color: AppColors.accent,
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.accent.withValues(alpha: 0.5),
-                blurRadius: 6,
-                spreadRadius: 1,
-              ),
-            ],
+    return GlassCard(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.md,
+        vertical: AppSpacing.sm + 4,
+      ),
+      borderRadius: 10,
+      child: Row(
+        children: [
+          Container(
+            width: 36,
+            height: 36,
+            decoration: BoxDecoration(
+              color: AppColors.accent.withValues(alpha: 0.08),
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: AppColors.borderAccent),
+            ),
+            child: Icon(pillar.icon, size: 18, color: AppColors.accent),
           ),
-        ),
-        const SizedBox(width: AppSpacing.sm),
-        Text(
-          AppStrings.availability,
-          style: AppTypography.bodySmall.copyWith(
-            color: AppColors.accent,
+          const SizedBox(width: AppSpacing.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  pillar.title,
+                  style: AppTypography.headingS.copyWith(
+                    color: AppColors.textPrimary,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  pillar.tags,
+                  style: AppTypography.monoSmall,
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
