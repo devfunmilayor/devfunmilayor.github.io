@@ -66,7 +66,7 @@ abstract class AppStrings {
   static const String downloadCV = 'Download CV';
   static const String sendMessage = 'Send Message';
   static const String bookCall = 'Book a Call';
-  static const String scheduleGoogle = 'Schedule via Google Meet';
+  static const String scheduleGoogle = 'Send a Calendar Invite';
 
   // Social URLs
   static const String githubUrl = 'https://github.com/devfunmilayor';
@@ -77,7 +77,7 @@ abstract class AppStrings {
   // Booking URLs
   static const String calendlyUrl = 'https://calendly.com/tfunmii';
   static const String googleMeetUrl =
-      'https://meet.google.com/new?authuser=tfunmii@gmail.com';
+      'https://calendar.google.com/calendar/render?action=TEMPLATE&add=tfunmii@gmail.com&text=Meeting+with+Dev.Funmi';
 
   // EmailJS config
   static const String emailJsServiceId = 'service_ldtkvuq';

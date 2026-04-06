@@ -32,12 +32,12 @@ class BookingSection extends StatelessWidget {
       FadeSlideIn(
         delay: const Duration(milliseconds: 200),
         child: const BookingOptionCard(
-          title: 'Google Meet',
+          title: 'Google Calendar',
           description:
-              'Jump straight into a video call. No sign-up needed on your end.',
+              'Pick a time that works for you. Sends me a calendar invite directly.',
           ctaLabel: AppStrings.scheduleGoogle,
           url: AppStrings.googleMeetUrl,
-          icon: HugeIcons.strokeRoundedVideo01,
+          icon: HugeIcons.strokeRoundedCalendar03,
         ),
       ),
     ];
