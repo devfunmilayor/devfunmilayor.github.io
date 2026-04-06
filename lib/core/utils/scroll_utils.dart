@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import '../constants/app_strings.dart';
 import '../constants/app_spacing.dart';
 
@@ -24,18 +23,15 @@ abstract class ScrollUtils {
   static void scrollTo(String section) {
     final ctx = sectionKeys[section]?.currentContext;
     if (ctx == null || _controller == null) return;
-    final renderObject = ctx.findRenderObject();
-    if (renderObject == null) return;
 
-    // Use RenderAbstractViewport.getOffsetToReveal for accurate sliver offsets.
-    // This is what Scrollable.ensureVisible uses internally, but we call
-    // animateTo ourselves so we use our own controller.
-    final viewport = RenderAbstractViewport.maybeOf(renderObject);
-    if (viewport == null) return;
+    final box = ctx.findRenderObject() as RenderBox?;
+    if (box == null || !box.hasSize) return;
 
-    final revealOffset =
-        viewport.getOffsetToReveal(renderObject, 0.0).offset;
-    final target = (revealOffset - AppSpacing.navHeight)
+    // localToGlobal gives the widget's current Y on screen.
+    // Adding the current scroll offset gives its absolute position in the
+    // document, then subtract nav height so it isn't hidden behind the bar.
+    final screenY = box.localToGlobal(Offset.zero).dy;
+    final target = (_controller!.offset + screenY - AppSpacing.navHeight)
         .clamp(0.0, _controller!.position.maxScrollExtent);
 
     _controller!.animateTo(
