@@ -11,12 +11,12 @@ abstract class AppStrings {
 
   // About bio
   static const String bio =
-      "Over Six years building production mobile apps and the backends that power them. "
+      "Over six years building production mobile apps and the backends that power them. "
       "I work across Flutter, native iOS/Swift, and Android/Kotlin for the mobile layer, "
       "and Go for backend services: gRPC, REST, and event-driven systems.\n\n"
       "I've shipped apps serving millions of users in banking, crypto, and enterprise. "
       "At TruePath Vision I lead mobile architecture for a cross-platform biometric SDK "
-      "with native iOS and Android integrations. I own the full stack: system design, "
+      "with native iOS and Android integrations. I cover the full stack: system design, "
       "native platform channels, Go microservices, CI/CD, and App Store releases.";
 
   // Hero typewriter roles

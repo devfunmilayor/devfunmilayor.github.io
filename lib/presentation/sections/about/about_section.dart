@@ -162,10 +162,10 @@ class _BioBlock extends StatelessWidget {
         Text(
           'Over six years building production apps and the backends that power them. '
           'I work across Flutter, native iOS/Swift, and Android/Kotlin for the mobile layer, '
-          'and Go for backend services — gRPC, REST, and event-driven systems.\n\n'
+          'and Go for backend services: gRPC, REST and event-driven systems.\n\n'
           "I've shipped apps serving millions of users across banking, crypto, and enterprise. "
           'At TruePath Vision I lead mobile architecture for a cross-platform biometric SDK '
-          'with on-device ML and native iOS/Android integrations. I own the full stack: '
+          'with on-device ML and native iOS/Android integrations. I cover the full stack: '
           'system design, native platform channels, Go microservices, CI/CD, and App Store releases.',
           style: AppTypography.bodyLarge,
         ),

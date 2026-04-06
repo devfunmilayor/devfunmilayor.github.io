@@ -9,7 +9,7 @@ abstract class PortfolioData {
       period: 'Feb 2023 – Nov 2024',
       description:
           'Cross-platform Flutter app with Go backend and native iOS/Android integrations. '
-          'Built from zero to production, owning mobile architecture, '
+          'Built from zero to production, leading mobile architecture, '
           'gRPC services, and release pipelines.',
       tags: ['Flutter', 'Go', 'gRPC', 'Native iOS/Android', 'Clean Architecture'],
       highlights: [
@@ -99,7 +99,7 @@ abstract class PortfolioData {
       period: 'Feb 2020 – Oct 2021',
       description:
           'Business banking platform built with Flutter and native integrations for '
-          'enterprise-grade transaction volumes. Automated testing and Fastlane release pipelines.',
+          'large-scale transaction volumes. Automated testing and Azure release pipelines.',
       tags: ['Flutter', 'Kotlin', 'Swift', 'Corporate Banking', 'Fastlane'],
       highlights: [
         'Enterprise transaction volumes',
