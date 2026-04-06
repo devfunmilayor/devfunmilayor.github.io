@@ -1,4 +1,5 @@
-import '../models/portfolio_model.dart';
+
+import 'package:devfunmi/data/models/portfolio_model.dart';
 
 abstract class PortfolioData {
   static const List<PortfolioModel> all = [
@@ -10,7 +11,7 @@ abstract class PortfolioData {
           'Cross-platform Flutter app with Go backend and native iOS/Android integrations. '
           'Built from zero to production, owning mobile architecture, '
           'gRPC services, and release pipelines.',
-      tags: ['Flutter', 'Go', 'gRPC', 'Native iOS/Android', 'Docker', 'Kubernetes', 'Clean Architecture'],
+      tags: ['Flutter', 'Go', 'gRPC', 'Native iOS/Android', 'Clean Architecture'],
       highlights: [
         '0 → production full ownership',
         'Real-time customer to agent chat',
@@ -28,7 +29,7 @@ abstract class PortfolioData {
           'Cross-border payments platform built with Flutter and native Kotlin/Swift modules '
           'for performance-critical features. Go-powered backend services '
           'for real-time FX processing.',
-      tags: ['Flutter', 'Go', 'Kotlin', 'Swift', 'AWS', 'GitHub Actions', 'CI/CD'],
+      tags: ['Flutter', 'Go', 'Kotlin', 'Swift', 'CI/CD'],
       highlights: [
         '30% crash rate reduction',
         '35% faster cross-border processing',
@@ -46,7 +47,7 @@ abstract class PortfolioData {
       description:
           'Investment platform for AIICO Insurance. Flutter frontend with Firebase backend, '
           'real-time portfolio tracking, and native iOS/Android push notification integrations.',
-      tags: ['Flutter', 'Firebase', 'Native iOS', 'Native Android', 'DataDog', 'Clean Architecture'],
+      tags: ['Flutter', 'Firebase', 'Native iOS', 'Native Android', 'Clean Architecture'],
       highlights: [
         'Real-time portfolio tracking',
         'Proactive monitoring & observability',
@@ -64,7 +65,7 @@ abstract class PortfolioData {
       description:
           'Buy-now-pay-later platform with Flutter cross-platform UI and native Kotlin/Swift modules. '
           'MVVM + DDD architecture with reusable component library.',
-      tags: ['Flutter', 'Kotlin', 'Swift', 'MVVM', 'DDD', 'GitHub Actions'],
+      tags: ['Flutter', 'Kotlin', 'Swift', 'MVVM', 'DDD'],
       highlights: [
         '34% navigation & usability improvement',
         '20% engagement increase',
@@ -81,7 +82,7 @@ abstract class PortfolioData {
       description:
           'Core retail banking super-app for Sterling Bank. Flutter with native iOS/Android integrations, '
           'migrated from MVP to MVVM and scaled to millions of users.',
-      tags: ['Flutter', 'Native iOS', 'Native Android', 'MVVM', 'Fastlane', 'CI/CD'],
+      tags: ['Flutter', 'Native iOS', 'Native Android', 'MVVM', 'CI/CD'],
       highlights: [
         'Millions of active users',
         '50% fewer release errors',
@@ -99,7 +100,7 @@ abstract class PortfolioData {
       description:
           'Business banking platform built with Flutter and native integrations for '
           'enterprise-grade transaction volumes. Automated testing and Fastlane release pipelines.',
-      tags: ['Flutter', 'Kotlin', 'Swift', 'Corporate Banking', 'Fastlane', 'TDD'],
+      tags: ['Flutter', 'Kotlin', 'Swift', 'Corporate Banking', 'Fastlane'],
       highlights: [
         'Enterprise transaction volumes',
         'Automated CI/CD pipeline',
@@ -116,7 +117,7 @@ abstract class PortfolioData {
       description:
           'Lifestyle and payments app for Sterling Bank targeting younger users. '
           'Flutter with native iOS/Android payment integrations and seamless cross-platform UX.',
-      tags: ['Flutter', 'Native iOS', 'Native Android', 'Payments', 'MVVM', 'Firebase'],
+      tags: ['Flutter', 'Native iOS', 'Native Android', 'Payments', 'MVVM'],
       highlights: [
         'Youth-focused banking UX',
         'Seamless payments integration',

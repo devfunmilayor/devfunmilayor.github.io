@@ -1,5 +1,5 @@
+import 'package:devfunmi/core/constants/app_animations.dart';
 import 'package:flutter/material.dart';
-import '../../core/constants/app_animations.dart';
 import 'fade_slide_in.dart';
 
 class StaggerList extends StatelessWidget {

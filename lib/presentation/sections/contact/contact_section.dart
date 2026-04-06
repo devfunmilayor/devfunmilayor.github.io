@@ -1,15 +1,15 @@
+import 'package:devfunmi/core/constants/app_colors.dart';
+import 'package:devfunmi/core/constants/app_spacing.dart';
+import 'package:devfunmi/core/constants/app_strings.dart';
+import 'package:devfunmi/core/constants/app_typography.dart';
+import 'package:devfunmi/core/utils/launch_utils.dart';
+import 'package:devfunmi/core/utils/scroll_utils.dart';
+import 'package:devfunmi/widgets/animations/fade_slide_in.dart';
+import 'package:devfunmi/widgets/glass/glass_card.dart';
+import 'package:devfunmi/widgets/layout/responsive_layout.dart';
+import 'package:devfunmi/widgets/layout/section_wrapper.dart';
+import 'package:devfunmi/widgets/text/section_heading.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_typography.dart';
-import '../../../core/constants/app_spacing.dart';
-import '../../../core/constants/app_strings.dart';
-import '../../../core/utils/scroll_utils.dart';
-import '../../../core/utils/launch_utils.dart';
-import '../../../widgets/animations/fade_slide_in.dart';
-import '../../../widgets/glass/glass_card.dart';
-import '../../../widgets/layout/responsive_layout.dart';
-import '../../../widgets/layout/section_wrapper.dart';
-import '../../../widgets/text/section_heading.dart';
 import 'contact_form.dart';
 
 class ContactSection extends StatelessWidget {
@@ -88,10 +88,7 @@ class _ContactInfo extends StatelessWidget {
           ),
         ),
         const SizedBox(height: AppSpacing.md),
-        Text(
-          AppStrings.contactSubtitle,
-          style: AppTypography.bodyLarge,
-        ),
+        Text(AppStrings.contactSubtitle, style: AppTypography.bodyLarge),
         const SizedBox(height: AppSpacing.xl),
         _ContactItem(
           icon: Icons.email_outlined,
@@ -137,8 +134,12 @@ class _ContactItemState extends State<_ContactItem> {
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
-      onEnter: (_) => Future.microtask(() { if (mounted) setState(() => _hovered = true); }),
-      onExit: (_) => Future.microtask(() { if (mounted) setState(() => _hovered = false); }),
+      onEnter: (_) => Future.microtask(() {
+        if (mounted) setState(() => _hovered = true);
+      }),
+      onExit: (_) => Future.microtask(() {
+        if (mounted) setState(() => _hovered = false);
+      }),
       child: GestureDetector(
         onTap: widget.onTap,
         child: GlassCard(
@@ -158,9 +159,7 @@ class _ContactItemState extends State<_ContactItem> {
               Text(
                 widget.label,
                 style: AppTypography.bodySmall.copyWith(
-                  color: _hovered
-                      ? AppColors.textPrimary
-                      : AppColors.textMuted,
+                  color: _hovered ? AppColors.textPrimary : AppColors.textMuted,
                 ),
               ),
             ],

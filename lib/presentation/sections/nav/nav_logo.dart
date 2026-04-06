@@ -1,8 +1,8 @@
+import 'package:devfunmi/core/constants/app_colors.dart';
+import 'package:devfunmi/core/constants/app_strings.dart';
+import 'package:devfunmi/core/constants/app_typography.dart';
+import 'package:devfunmi/core/utils/scroll_utils.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_typography.dart';
-import '../../../core/constants/app_strings.dart';
-import '../../../core/utils/scroll_utils.dart';
 
 class NavLogo extends StatefulWidget {
   const NavLogo({super.key});

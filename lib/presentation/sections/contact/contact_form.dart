@@ -1,11 +1,11 @@
+import 'package:devfunmi/core/constants/app_colors.dart';
+import 'package:devfunmi/core/constants/app_spacing.dart';
+import 'package:devfunmi/core/constants/app_strings.dart';
+import 'package:devfunmi/core/constants/app_typography.dart';
+import 'package:devfunmi/core/di/injection.dart';
+import 'package:devfunmi/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_typography.dart';
-import '../../../core/constants/app_spacing.dart';
-import '../../../core/constants/app_strings.dart';
-import '../../../core/di/injection.dart';
-import '../../../widgets/buttons/primary_button.dart';
 import 'bloc/contact_bloc.dart';
 import 'bloc/contact_event.dart';
 import 'bloc/contact_state.dart';
@@ -116,10 +116,7 @@ class _ContactFormBody extends StatelessWidget {
       maxLines: maxLines,
       onChanged: onChanged,
       style: AppTypography.bodyMedium.copyWith(color: AppColors.textPrimary),
-      decoration: InputDecoration(
-        labelText: label,
-        hintText: hint,
-      ),
+      decoration: InputDecoration(labelText: label, hintText: hint),
     );
   }
 }
@@ -139,8 +136,11 @@ class _SuccessMessage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.check_circle_outline,
-              color: AppColors.accent, size: 32),
+          const Icon(
+            Icons.check_circle_outline,
+            color: AppColors.accent,
+            size: 32,
+          ),
           const SizedBox(height: AppSpacing.md),
           Text(
             'Message sent!',

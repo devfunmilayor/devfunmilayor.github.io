@@ -1,11 +1,11 @@
+import 'package:devfunmi/core/constants/app_animations.dart';
+import 'package:devfunmi/core/constants/app_colors.dart';
+import 'package:devfunmi/core/constants/app_spacing.dart';
+import 'package:devfunmi/core/constants/app_strings.dart';
+import 'package:devfunmi/core/utils/cv_download_stub.dart';
+import 'package:devfunmi/widgets/buttons/ghost_button.dart';
+import 'package:devfunmi/widgets/layout/responsive_layout.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_spacing.dart';
-import '../../../core/constants/app_animations.dart';
-import '../../../core/constants/app_strings.dart';
-import '../../../core/utils/cv_download_utils.dart';
-import '../../../widgets/buttons/ghost_button.dart';
-import '../../../widgets/layout/responsive_layout.dart';
 import 'nav_logo.dart';
 import 'nav_links.dart';
 

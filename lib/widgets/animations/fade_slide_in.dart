@@ -1,5 +1,6 @@
+import 'package:devfunmi/core/constants/app_animations.dart';
 import 'package:flutter/material.dart';
-import '../../core/constants/app_animations.dart';
+
 
 class FadeSlideIn extends StatefulWidget {
   final Widget child;

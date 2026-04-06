@@ -1,12 +1,12 @@
+import 'package:devfunmi/core/constants/app_spacing.dart';
+import 'package:devfunmi/core/constants/app_strings.dart';
+import 'package:devfunmi/core/utils/scroll_utils.dart';
+import 'package:devfunmi/data/content/portfolio_data.dart';
+import 'package:devfunmi/widgets/animations/fade_slide_in.dart';
+import 'package:devfunmi/widgets/layout/adaptive_grid.dart';
+import 'package:devfunmi/widgets/layout/section_wrapper.dart';
+import 'package:devfunmi/widgets/text/section_heading.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_spacing.dart';
-import '../../../core/constants/app_strings.dart';
-import '../../../core/utils/scroll_utils.dart';
-import '../../../data/content/portfolio_data.dart';
-import '../../../widgets/animations/fade_slide_in.dart';
-import '../../../widgets/layout/adaptive_grid.dart';
-import '../../../widgets/layout/section_wrapper.dart';
-import '../../../widgets/text/section_heading.dart';
 import 'portfolio_card.dart';
 
 class PortfolioSection extends StatelessWidget {

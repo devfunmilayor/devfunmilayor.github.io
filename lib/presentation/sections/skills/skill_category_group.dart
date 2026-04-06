@@ -1,10 +1,10 @@
+import 'package:devfunmi/core/constants/app_colors.dart';
+import 'package:devfunmi/core/constants/app_spacing.dart';
+import 'package:devfunmi/core/constants/app_typography.dart';
+import 'package:devfunmi/data/models/skill_category_model.dart';
+import 'package:devfunmi/widgets/chips/tag_chip.dart';
+import 'package:devfunmi/widgets/glass/glass_card.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_typography.dart';
-import '../../../core/constants/app_spacing.dart';
-import '../../../data/models/skill_category_model.dart';
-import '../../../widgets/chips/tag_chip.dart';
-import '../../../widgets/glass/glass_card.dart';
 
 class SkillCategoryGroup extends StatelessWidget {
   final SkillCategoryModel data;

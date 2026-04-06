@@ -1,6 +1,6 @@
+import 'package:devfunmi/core/constants/app_breakpoints.dart';
+import 'package:devfunmi/core/constants/app_spacing.dart';
 import 'package:flutter/material.dart';
-import '../constants/app_breakpoints.dart';
-import '../constants/app_spacing.dart';
 
 abstract class ResponsiveUtils {
   static T value<T>(

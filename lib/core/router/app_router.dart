@@ -1,6 +1,6 @@
+import 'package:devfunmi/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../presentation/pages/home_page.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: [

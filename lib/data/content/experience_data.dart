@@ -1,4 +1,4 @@
-import '../models/experience_model.dart';
+import 'package:devfunmi/data/models/experience_model.dart';
 
 abstract class ExperienceData {
   static const List<ExperienceModel> all = [
@@ -15,7 +15,7 @@ abstract class ExperienceData {
         'Wrote high-throughput API Gateway in Go, reducing end-to-end latency significantly',
         'Drove TDD, privacy-aware data flows, and CI/CD with cross-functional ML teams',
       ],
-      tags: ['Flutter', 'Go', 'Swift', 'Kotlin', 'Docker', 'AWS', 'GitHub Actions', 'CI/CD'],
+      tags: ['Flutter', 'Swift', 'Kotlin', 'Go', 'ML Kit', 'Vision Framework', 'CI/CD', 'TDD'],
     ),
 
     ExperienceModel(
@@ -30,7 +30,7 @@ abstract class ExperienceData {
         'Architected real-time event-driven customer to agent chat system',
         'Sustained 99.9% uptime across mobile and backend via CI/CD and Clean Architecture',
       ],
-      tags: ['Flutter', 'Go', 'gRPC', 'Kubernetes', 'Docker', 'GitOps', 'Clean Architecture'],
+      tags: ['Flutter', 'Go', 'gRPC', 'iOS', 'Android', 'Crypto Wallet', 'Clean Architecture', 'CI/CD'],
     ),
 
     ExperienceModel(
@@ -45,7 +45,7 @@ abstract class ExperienceData {
         'Designed event-driven observability layer across mobile and backend systems',
         'Enforced Clean Architecture, TDD, and CI/CD across all products',
       ],
-      tags: ['Flutter', 'Swift', 'Kotlin', 'Firebase', 'DataDog', 'Sentry', 'GitHub Actions', 'AWS'],
+      tags: ['Flutter', 'Kotlin', 'Swift', 'iOS', 'Android', 'Clean Architecture', 'TDD', 'CI/CD'],
     ),
 
     ExperienceModel(
@@ -59,7 +59,7 @@ abstract class ExperienceData {
         'Built reusable Flutter UI library and native platform channel service layer',
         'Established unit and integration testing with CI/CD pipelines for both platforms',
       ],
-      tags: ['Flutter', 'Kotlin', 'Swift', 'DataDog', 'GitHub Actions', 'TDD', 'MVVM'],
+      tags: ['Flutter', 'MVVM', 'DDD', 'Kotlin', 'Swift', 'DataDog', 'CI/CD'],
     ),
 
     ExperienceModel(
@@ -73,7 +73,7 @@ abstract class ExperienceData {
         'Reduced manual release errors 50% via automated CI/CD with Fastlane',
         'Introduced automated testing across all banking platforms',
       ],
-      tags: ['Flutter', 'iOS', 'Android', 'Fastlane', 'CI/CD', 'Firebase'],
+      tags: ['Flutter', 'MVVM', 'iOS', 'Android', 'Fastlane', 'CI/CD'],
     ),
 
     ExperienceModel(

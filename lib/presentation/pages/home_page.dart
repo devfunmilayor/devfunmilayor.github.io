@@ -1,17 +1,17 @@
+import 'package:devfunmi/core/constants/app_colors.dart';
+import 'package:devfunmi/core/constants/app_strings.dart';
+import 'package:devfunmi/core/utils/scroll_utils.dart';
+import 'package:devfunmi/presentation/sections/about/about_section.dart';
+import 'package:devfunmi/presentation/sections/booking/booking_section.dart';
+import 'package:devfunmi/presentation/sections/contact/contact_section.dart';
+import 'package:devfunmi/presentation/sections/experience/experience_section.dart';
+import 'package:devfunmi/presentation/sections/footer/footer_section.dart';
+import 'package:devfunmi/presentation/sections/hero/hero_section.dart';
+import 'package:devfunmi/presentation/sections/nav/mobile_drawer.dart';
+import 'package:devfunmi/presentation/sections/nav/nav_bar.dart';
+import 'package:devfunmi/presentation/sections/portfolio/portfolio_section.dart';
+import 'package:devfunmi/presentation/sections/skills/skills_section.dart';
 import 'package:flutter/material.dart';
-import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_strings.dart';
-import '../../core/utils/scroll_utils.dart';
-import '../sections/nav/nav_bar.dart';
-import '../sections/nav/mobile_drawer.dart';
-import '../sections/hero/hero_section.dart';
-import '../sections/about/about_section.dart';
-import '../sections/skills/skills_section.dart';
-import '../sections/experience/experience_section.dart';
-import '../sections/portfolio/portfolio_section.dart';
-import '../sections/booking/booking_section.dart';
-import '../sections/contact/contact_section.dart';
-import '../sections/footer/footer_section.dart';
 
 class HomePage extends StatefulWidget {
   final String? initialSection;
@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    ScrollUtils.registerController(_scrollController);
     _scrollController.addListener(_updateActiveSection);
 
     if (widget.initialSection != null) {

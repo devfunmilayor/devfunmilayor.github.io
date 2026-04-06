@@ -1,12 +1,12 @@
+import 'package:devfunmi/core/constants/app_colors.dart';
+import 'package:devfunmi/core/constants/app_spacing.dart';
+import 'package:devfunmi/core/constants/app_strings.dart';
+import 'package:devfunmi/core/constants/app_typography.dart';
+import 'package:devfunmi/core/utils/cv_download_stub.dart';
+import 'package:devfunmi/widgets/animations/stagger_list.dart';
+import 'package:devfunmi/widgets/buttons/icon_link_button.dart';
+import 'package:devfunmi/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_typography.dart';
-import '../../../core/constants/app_spacing.dart';
-import '../../../core/constants/app_strings.dart';
-import '../../../core/utils/cv_download_utils.dart';
-import '../../../widgets/animations/stagger_list.dart';
-import '../../../widgets/buttons/primary_button.dart';
-import '../../../widgets/buttons/icon_link_button.dart';
 
 class MobileDrawer extends StatelessWidget {
   final String activeSection;

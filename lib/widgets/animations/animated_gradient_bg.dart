@@ -1,6 +1,6 @@
+import 'package:devfunmi/core/constants/app_animations.dart';
+import 'package:devfunmi/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
-import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_animations.dart';
 
 class AnimatedGradientBg extends StatefulWidget {
   final Widget child;
