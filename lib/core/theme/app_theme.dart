@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_typography.dart';
 import '../constants/app_spacing.dart';
@@ -8,7 +9,7 @@ abstract class AppTheme {
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.background,
-      fontFamily: 'Urbanist',
+      fontFamily: GoogleFonts.urbanist().fontFamily,
       colorScheme: const ColorScheme.dark(
         surface: AppColors.surface,
         primary: AppColors.accent,
@@ -17,7 +18,7 @@ abstract class AppTheme {
         onPrimary: AppColors.background,
         onSurface: AppColors.textPrimary,
       ),
-      textTheme: const TextTheme(
+      textTheme: TextTheme(
         displayLarge: AppTypography.displayLarge,
         displayMedium: AppTypography.displayMedium,
         displaySmall: AppTypography.displaySmall,
