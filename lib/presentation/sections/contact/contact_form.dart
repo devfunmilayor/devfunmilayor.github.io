@@ -52,7 +52,7 @@ class _ContactFormBody extends StatelessWidget {
           children: [
             _field(
               label: 'Full Name',
-              hint: 'Emmanuel Olufunmilayo',
+              hint: 'Funmi Layo',
               onChanged: (v) => bloc.add(ContactEvent.nameChanged(v)),
             ),
             const SizedBox(height: AppSpacing.md),

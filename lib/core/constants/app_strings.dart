@@ -1,6 +1,6 @@
 abstract class AppStrings {
   // Personal
-  static const String name = 'Emmanuel Olufunmilayo';
+  static const String name = 'Funmi Layo';
   static const String displayName = 'Dev.Funmi';
   static const String title = 'Senior Fullstack Mobile Engineer';
   static const String tagline =
@@ -87,7 +87,7 @@ abstract class AppStrings {
 
   // Footer
   static const String footerCopyright =
-      '© 2025 Emmanuel Olufunmilayo. All rights reserved.';
+      '© 2025 Funmi Layo. All rights reserved.';
   static const String builtWith = 'Built with Flutter Web';
 
   // Contact section
