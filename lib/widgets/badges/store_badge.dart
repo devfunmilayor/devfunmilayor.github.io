@@ -4,6 +4,7 @@ import 'package:devfunmi/core/constants/app_spacing.dart';
 import 'package:devfunmi/core/constants/app_typography.dart';
 import 'package:devfunmi/core/utils/launch_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'app_store_type.dart';
 
 class StoreBadge extends StatefulWidget {
@@ -23,7 +24,7 @@ class _StoreBadgeState extends State<StoreBadge> {
       widget.type == AppStoreType.ios ? 'App Store' : 'Play Store';
 
   IconData get _icon =>
-      widget.type == AppStoreType.ios ? Icons.apple : Icons.android;
+      widget.type == AppStoreType.ios ? HugeIcons.strokeRoundedApple : HugeIcons.strokeRoundedAndroid;
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +50,8 @@ class _StoreBadgeState extends State<StoreBadge> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                _icon,
+              HugeIcon(
+                icon: _icon,
                 color: _hovered
                     ? AppColors.textPrimary
                     : AppColors.textSecondary,

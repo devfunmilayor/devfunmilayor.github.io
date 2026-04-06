@@ -10,6 +10,7 @@ import 'package:devfunmi/widgets/layout/responsive_layout.dart';
 import 'package:devfunmi/widgets/layout/section_wrapper.dart';
 import 'package:devfunmi/widgets/text/section_heading.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'contact_form.dart';
 
 class ContactSection extends StatelessWidget {
@@ -91,19 +92,19 @@ class _ContactInfo extends StatelessWidget {
         Text(AppStrings.contactSubtitle, style: AppTypography.bodyLarge),
         const SizedBox(height: AppSpacing.xl),
         _ContactItem(
-          icon: Icons.email_outlined,
+          icon: HugeIcons.strokeRoundedMail01,
           label: AppStrings.email,
           onTap: () => LaunchUtils.email(AppStrings.email),
         ),
         const SizedBox(height: AppSpacing.sm),
         _ContactItem(
-          icon: Icons.code,
+          icon: HugeIcons.strokeRoundedCode,
           label: 'github.com/devfunmilayor',
           onTap: () => LaunchUtils.open(AppStrings.githubUrl),
         ),
         const SizedBox(height: AppSpacing.sm),
         _ContactItem(
-          icon: Icons.link,
+          icon: HugeIcons.strokeRoundedLink01,
           label: 'linkedin.com/in/devfunmilayor',
           onTap: () => LaunchUtils.open(AppStrings.linkedinUrl),
         ),
@@ -150,8 +151,8 @@ class _ContactItemState extends State<_ContactItem> {
           ),
           child: Row(
             children: [
-              Icon(
-                widget.icon,
+              HugeIcon(
+                icon: widget.icon,
                 color: _hovered ? AppColors.accent : AppColors.textMuted,
                 size: 18,
               ),

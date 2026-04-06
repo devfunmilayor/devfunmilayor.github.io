@@ -6,6 +6,7 @@ import 'package:devfunmi/data/models/experience_model.dart';
 import 'package:devfunmi/widgets/chips/tag_chip.dart';
 import 'package:devfunmi/widgets/glass/glass_card.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class ExperienceNode extends StatefulWidget {
   final ExperienceModel data;
@@ -178,8 +179,8 @@ class _ExperienceNodeState extends State<ExperienceNode>
                         children: [
                           const Padding(
                             padding: EdgeInsets.only(top: 4),
-                            child: Icon(
-                              Icons.check,
+                            child: HugeIcon(
+                              icon: HugeIcons.strokeRoundedTick01,
                               color: AppColors.accent,
                               size: 14,
                             ),

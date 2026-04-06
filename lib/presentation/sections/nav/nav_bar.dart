@@ -6,6 +6,7 @@ import 'package:devfunmi/core/utils/cv_download_stub.dart';
 import 'package:devfunmi/widgets/buttons/ghost_button.dart';
 import 'package:devfunmi/widgets/layout/responsive_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'nav_logo.dart';
 import 'nav_links.dart';
 
@@ -84,15 +85,16 @@ class _NavBarState extends State<NavBar> {
                 const SizedBox(width: AppSpacing.lg),
                 GhostButton(
                   label: AppStrings.navDownloadCV,
-                  icon: Icons.download,
+                  icon: HugeIcons.strokeRoundedDownload01,
                   onTap: downloadCV,
                 ),
               ] else if (!isDesktop) ...[
                 Builder(
                   builder: (context) => IconButton(
-                    icon: const Icon(
-                      Icons.menu,
+                    icon: HugeIcon(
+                      icon: HugeIcons.strokeRoundedMenu01,
                       color: AppColors.textPrimary,
+                      size: 24,
                     ),
                     onPressed: () => Scaffold.of(context).openEndDrawer(),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/utils/scroll_utils.dart';
@@ -24,7 +25,7 @@ class BookingSection extends StatelessWidget {
               'Book a 30 or 60-minute session. Async scheduling, no back and forth.',
           ctaLabel: 'Book on Calendly',
           url: AppStrings.calendlyUrl,
-          icon: Icons.calendar_today,
+          icon: HugeIcons.strokeRoundedCalendar01,
           isPrimary: true,
         ),
       ),
@@ -36,7 +37,7 @@ class BookingSection extends StatelessWidget {
               'Jump straight into a video call. No sign-up needed on your end.',
           ctaLabel: AppStrings.scheduleGoogle,
           url: AppStrings.googleMeetUrl,
-          icon: Icons.video_call,
+          icon: HugeIcons.strokeRoundedVideo01,
         ),
       ),
     ];

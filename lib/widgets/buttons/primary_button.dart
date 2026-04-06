@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_typography.dart';
 import '../../core/constants/app_spacing.dart';
@@ -67,7 +68,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (widget.icon != null) ...[
-                Icon(widget.icon, color: AppColors.background, size: 18),
+                HugeIcon(icon: widget.icon!, color: AppColors.background, size: 18),
                 const SizedBox(width: AppSpacing.sm),
               ],
               Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_typography.dart';
 import '../../../core/constants/app_spacing.dart';
@@ -85,13 +86,13 @@ class HeroTextColumn extends StatelessWidget {
             children: [
               PrimaryButton(
                 label: AppStrings.viewWork,
-                icon: Icons.arrow_forward,
+                icon: HugeIcons.strokeRoundedArrowRight01,
                 onTap: () =>
                     ScrollUtils.scrollTo(AppStrings.sectionPortfolio),
               ),
               GhostButton(
                 label: AppStrings.downloadCV,
-                icon: Icons.download,
+                icon: HugeIcons.strokeRoundedDownload01,
                 onTap: downloadCV,
               ),
             ],
@@ -106,19 +107,19 @@ class HeroTextColumn extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               IconLinkButton(
-                icon: Icons.code,
+                icon: HugeIcons.strokeRoundedCode,
                 url: AppStrings.githubUrl,
                 tooltip: 'GitHub',
               ),
               const SizedBox(width: AppSpacing.sm),
               IconLinkButton(
-                icon: Icons.link,
+                icon: HugeIcons.strokeRoundedLink01,
                 url: AppStrings.linkedinUrl,
                 tooltip: 'LinkedIn',
               ),
               const SizedBox(width: AppSpacing.sm),
               IconLinkButton(
-                icon: Icons.alternate_email,
+                icon: HugeIcons.strokeRoundedAt,
                 url: AppStrings.twitterUrl,
                 tooltip: 'Twitter / X',
               ),

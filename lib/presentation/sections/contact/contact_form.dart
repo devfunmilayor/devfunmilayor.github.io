@@ -6,6 +6,7 @@ import 'package:devfunmi/core/di/injection.dart';
 import 'package:devfunmi/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'bloc/contact_bloc.dart';
 import 'bloc/contact_event.dart';
 import 'bloc/contact_state.dart';
@@ -92,7 +93,7 @@ class _ContactFormBody extends StatelessWidget {
                   : AppStrings.sendMessage,
               icon: state.status == ContactStatus.submitting
                   ? null
-                  : Icons.send,
+                  : HugeIcons.strokeRoundedSent,
               onTap: state.isValid && state.status != ContactStatus.submitting
                   ? () => bloc.add(const ContactEvent.submitted())
                   : null,
@@ -136,8 +137,8 @@ class _SuccessMessage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(
-            Icons.check_circle_outline,
+          const HugeIcon(
+            icon: HugeIcons.strokeRoundedCheckmarkCircle01,
             color: AppColors.accent,
             size: 32,
           ),

@@ -9,6 +9,7 @@ import 'package:devfunmi/widgets/layout/responsive_layout.dart';
 import 'package:devfunmi/widgets/layout/section_wrapper.dart';
 import 'package:devfunmi/widgets/text/section_heading.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -186,7 +187,7 @@ class _MetaBlock extends StatelessWidget {
       children: [
         // Currently at
         _MetaRow(
-          icon: Icons.work_outline_rounded,
+          icon: HugeIcons.strokeRoundedBriefcase01,
           label: 'Currently',
           value: 'Lead Engineer · TruePath Vision',
           valueColor: AppColors.accent,
@@ -194,7 +195,7 @@ class _MetaBlock extends StatelessWidget {
         const SizedBox(height: AppSpacing.md),
         // Location
         _MetaRow(
-          icon: Icons.location_on_outlined,
+          icon: HugeIcons.strokeRoundedLocation01,
           label: 'Based in',
           value: 'Lagos, Nigeria · WAT (UTC+1)',
         ),
@@ -224,7 +225,7 @@ class _MetaRow extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(icon, size: 16, color: AppColors.textMuted),
+        HugeIcon(icon: icon, size: 16, color: AppColors.textMuted),
         const SizedBox(width: AppSpacing.sm),
         Text(
           '$label  ',
@@ -366,17 +367,17 @@ class _WhatIDoSection extends StatelessWidget {
 
   static const _pillars = [
     _Pillar(
-      icon: Icons.phone_iphone_rounded,
+      icon: HugeIcons.strokeRoundedSmartPhone01,
       title: 'Mobile Engineering',
       tags: 'Flutter · Swift · Kotlin',
     ),
     _Pillar(
-      icon: Icons.settings_ethernet_rounded,
+      icon: HugeIcons.strokeRoundedServerStack01,
       title: 'Backend Systems',
       tags: 'Go · gRPC · REST · Events',
     ),
     _Pillar(
-      icon: Icons.architecture_rounded,
+      icon: HugeIcons.strokeRoundedBuilding04,
       title: 'Architecture & DevOps',
       tags: 'Clean Arch · TDD · CI/CD',
     ),
@@ -432,7 +433,7 @@ class _PillarCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               border: Border.all(color: AppColors.borderAccent),
             ),
-            child: Icon(pillar.icon, size: 18, color: AppColors.accent),
+            child: HugeIcon(icon: pillar.icon, size: 18, color: AppColors.accent),
           ),
           const SizedBox(width: AppSpacing.md),
           Expanded(

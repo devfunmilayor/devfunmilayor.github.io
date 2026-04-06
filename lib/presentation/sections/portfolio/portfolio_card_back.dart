@@ -7,6 +7,7 @@ import 'package:devfunmi/widgets/badges/store_badge.dart';
 import 'package:devfunmi/widgets/chips/tag_chip.dart';
 import 'package:devfunmi/widgets/glass/glass_card.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class PortfolioCardBack extends StatelessWidget {
   final PortfolioModel data;
@@ -37,8 +38,8 @@ class PortfolioCardBack extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              Icon(
-                Icons.flip,
+              HugeIcon(
+                icon: HugeIcons.strokeRoundedFlipHorizontal,
                 color: AppColors.textMuted,
                 size: 16,
               ),

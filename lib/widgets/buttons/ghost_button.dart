@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_typography.dart';
 import '../../core/constants/app_spacing.dart';
@@ -54,8 +55,8 @@ class _GhostButtonState extends State<GhostButton> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (widget.icon != null) ...[
-                Icon(
-                  widget.icon,
+                HugeIcon(
+                  icon: widget.icon!,
                   color: _hovered
                       ? AppColors.accent
                       : AppColors.textMuted,

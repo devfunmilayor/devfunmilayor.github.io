@@ -7,6 +7,7 @@ import 'package:devfunmi/widgets/animations/stagger_list.dart';
 import 'package:devfunmi/widgets/buttons/icon_link_button.dart';
 import 'package:devfunmi/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class MobileDrawer extends StatelessWidget {
   final String activeSection;
@@ -60,9 +61,10 @@ class MobileDrawer extends StatelessWidget {
                     ]),
                   ),
                   IconButton(
-                    icon: const Icon(
-                      Icons.close,
+                    icon: const HugeIcon(
+                      icon: HugeIcons.strokeRoundedCancel01,
                       color: AppColors.textMuted,
+                      size: 24,
                     ),
                     onPressed: () => Navigator.of(context).pop(),
                   ),
@@ -94,13 +96,13 @@ class MobileDrawer extends StatelessWidget {
               Row(
                 children: [
                   IconLinkButton(
-                    icon: Icons.code,
+                    icon: HugeIcons.strokeRoundedCode,
                     url: AppStrings.githubUrl,
                     tooltip: 'GitHub',
                   ),
                   const SizedBox(width: AppSpacing.sm),
                   IconLinkButton(
-                    icon: Icons.link,
+                    icon: HugeIcons.strokeRoundedLink01,
                     url: AppStrings.linkedinUrl,
                     tooltip: 'LinkedIn',
                   ),
@@ -111,7 +113,7 @@ class MobileDrawer extends StatelessWidget {
               // CV download
               PrimaryButton(
                 label: AppStrings.downloadCV,
-                icon: Icons.download,
+                icon: HugeIcons.strokeRoundedDownload01,
                 onTap: downloadCV,
                 fullWidth: true,
               ),

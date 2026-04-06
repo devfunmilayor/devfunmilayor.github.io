@@ -10,6 +10,7 @@ import 'package:devfunmi/widgets/chips/tag_chip.dart';
 import 'package:devfunmi/widgets/glass/glass_card.dart';
 import 'package:devfunmi/widgets/layout/responsive_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'portfolio_card_back.dart';
 
 class PortfolioCard extends StatefulWidget {
@@ -171,8 +172,8 @@ class _PortfolioCardState extends State<PortfolioCard>
                 ),
               ),
               const SizedBox(width: AppSpacing.xs),
-              Icon(
-                Icons.flip,
+              HugeIcon(
+                icon: HugeIcons.strokeRoundedFlipHorizontal,
                 size: 12,
                 color: AppColors.textMuted.withValues(alpha: 0.6),
               ),

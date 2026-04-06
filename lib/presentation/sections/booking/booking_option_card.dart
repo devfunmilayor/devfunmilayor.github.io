@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_typography.dart';
 import '../../../core/constants/app_spacing.dart';
@@ -40,7 +41,7 @@ class BookingOptionCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: AppColors.borderAccent),
             ),
-            child: Icon(icon, color: AppColors.accent, size: 22),
+            child: HugeIcon(icon: icon, color: AppColors.accent, size: 22),
           ),
           const SizedBox(height: AppSpacing.lg),
           Text(
@@ -54,7 +55,7 @@ class BookingOptionCard extends StatelessWidget {
           const SizedBox(height: AppSpacing.xl),
           PrimaryButton(
             label: ctaLabel,
-            icon: Icons.arrow_forward,
+            icon: HugeIcons.strokeRoundedArrowRight01,
             onTap: () => LaunchUtils.open(url),
             fullWidth: true,
           ),

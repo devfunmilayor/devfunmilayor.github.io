@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_animations.dart';
 import '../../core/utils/launch_utils.dart';
@@ -43,8 +44,8 @@ class _IconLinkButtonState extends State<IconLinkButton> {
               color: _hovered ? AppColors.borderHover : AppColors.border,
             ),
           ),
-          child: Icon(
-            widget.icon,
+          child: HugeIcon(
+            icon: widget.icon,
             color: _hovered ? AppColors.textPrimary : AppColors.textMuted,
             size: widget.size,
           ),
