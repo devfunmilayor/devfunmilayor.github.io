@@ -1,12 +1,13 @@
 
 import 'package:devfunmi/data/models/skill_category_model.dart';
 import 'package:devfunmi/data/models/skill_model.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 abstract class SkillsData {
   static const List<SkillCategoryModel> all = [
     SkillCategoryModel(
       category: 'Languages & Frameworks',
-      emoji: '⚡',
+      icon: HugeIcons.strokeRoundedCode,
       skills: [
         SkillModel(label: 'Flutter / Dart'),
         SkillModel(label: 'Go (Golang)'),
@@ -16,7 +17,7 @@ abstract class SkillsData {
     ),
     SkillCategoryModel(
       category: 'Architecture & Patterns',
-      emoji: '🏛',
+      icon: HugeIcons.strokeRoundedLayers01,
       skills: [
         SkillModel(label: 'Clean Architecture'),
         SkillModel(label: 'MVVM'),
@@ -28,7 +29,7 @@ abstract class SkillsData {
     ),
     SkillCategoryModel(
       category: 'Backend & Cloud',
-      emoji: '☁️',
+      icon: HugeIcons.strokeRoundedCloud,
       skills: [
         SkillModel(label: 'Go / gRPC'),
         SkillModel(label: 'REST APIs'),
@@ -40,7 +41,7 @@ abstract class SkillsData {
     ),
     SkillCategoryModel(
       category: 'Native Integration',
-      emoji: '📱',
+      icon: HugeIcons.strokeRoundedSmartPhone01,
       skills: [
         SkillModel(label: 'Platform Channels'),
         SkillModel(label: 'iOS Vision Framework'),
@@ -52,7 +53,7 @@ abstract class SkillsData {
     ),
     SkillCategoryModel(
       category: 'DevOps & QA',
-      emoji: '🔧',
+      icon: HugeIcons.strokeRoundedTools,
       skills: [
         SkillModel(label: 'GitHub Actions'),
         SkillModel(label: 'Fastlane'),
@@ -64,7 +65,7 @@ abstract class SkillsData {
     ),
     SkillCategoryModel(
       category: 'Observability & Security',
-      emoji: '🔍',
+      icon: HugeIcons.strokeRoundedShield01,
       skills: [
         SkillModel(label: 'DataDog'),
         SkillModel(label: 'Sentry'),

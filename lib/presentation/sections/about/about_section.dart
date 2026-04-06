@@ -4,6 +4,7 @@ import 'package:devfunmi/core/constants/app_strings.dart';
 import 'package:devfunmi/core/constants/app_typography.dart';
 import 'package:devfunmi/core/utils/scroll_utils.dart';
 import 'package:devfunmi/widgets/animations/fade_slide_in.dart';
+import 'package:devfunmi/widgets/chips/status_pill.dart';
 import 'package:devfunmi/widgets/glass/glass_card.dart';
 import 'package:devfunmi/widgets/layout/responsive_layout.dart';
 import 'package:devfunmi/widgets/layout/section_wrapper.dart';
@@ -201,7 +202,7 @@ class _MetaBlock extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.md),
         // Availability
-        _AvailabilityRow(),
+        const StatusPill(),
       ],
     );
   }
@@ -239,37 +240,6 @@ class _MetaRow extends StatelessWidget {
           style: AppTypography.bodySmall.copyWith(
             color: valueColor ?? AppColors.textSecondary,
           ),
-        ),
-      ],
-    );
-  }
-}
-
-class _AvailabilityRow extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          width: 8,
-          height: 8,
-          decoration: BoxDecoration(
-            color: AppColors.accent,
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.accent.withValues(alpha: 0.5),
-                blurRadius: 8,
-                spreadRadius: 1,
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(width: AppSpacing.sm),
-        Text(
-          AppStrings.availability,
-          style: AppTypography.bodySmall.copyWith(color: AppColors.accent),
         ),
       ],
     );

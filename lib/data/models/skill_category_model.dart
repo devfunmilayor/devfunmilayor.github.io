@@ -1,13 +1,14 @@
+import 'package:flutter/widgets.dart';
 import 'skill_model.dart';
 
 class SkillCategoryModel {
   final String category;
-  final String emoji;
+  final IconData icon;
   final List<SkillModel> skills;
 
   const SkillCategoryModel({
     required this.category,
-    required this.emoji,
+    required this.icon,
     required this.skills,
   });
 }

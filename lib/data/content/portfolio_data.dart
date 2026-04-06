@@ -17,8 +17,8 @@ abstract class PortfolioData {
         'Real-time customer to agent chat',
         '99.9% uptime sustained',
       ],
-      iosUrl: 'https://apps.apple.com/app/zabira/id6443791329',
-      androidUrl: 'https://play.google.com/store/apps/details?id=com.zabira.app',
+      iosUrl: 'https://apps.apple.com/ng/app/zabira-buy-crypto-gift-card/id6504557775',
+      androidUrl: 'https://play.google.com/store/apps/details?id=dev.app.grizab.ng',
     ),
 
     PortfolioModel(
@@ -35,9 +35,8 @@ abstract class PortfolioData {
         '35% faster cross-border processing',
         'Native Kotlin/Swift performance modules',
       ],
-      iosUrl: 'https://apps.apple.com/app/smartsend-finance/id1619841578',
-      androidUrl:
-          'https://play.google.com/store/apps/details?id=com.zojatech.smartsend',
+      iosUrl: 'https://apps.apple.com/us/app/smartsend-finance/id6743051304',
+      androidUrl: 'https://play.google.com/store/apps/details?id=com.finanace.smartsend',
     ),
 
     PortfolioModel(
@@ -53,9 +52,8 @@ abstract class PortfolioData {
         'Proactive monitoring & observability',
         'Clean Architecture + TDD',
       ],
-      iosUrl: 'https://apps.apple.com/app/aiico-invest/id1618185759',
-      androidUrl:
-          'https://play.google.com/store/apps/details?id=com.aiicoinvest.app',
+      iosUrl: 'https://apps.apple.com/us/app/aiico-invest/id6448627710',
+      androidUrl: 'https://play.google.com/store/apps/details?id=com.aiicocapital.aiicoinvest',
     ),
 
     PortfolioModel(
@@ -71,8 +69,8 @@ abstract class PortfolioData {
         '20% engagement increase',
         'Reusable UI component library',
       ],
-      iosUrl: 'https://apps.apple.com/app/credpal/id1449768564',
-      androidUrl: 'https://play.google.com/store/apps/details?id=com.credpal.app',
+      iosUrl: 'https://apps.apple.com/ng/app/credpal/id1541846382',
+      androidUrl: 'https://play.google.com/store/search?q=credpal&c=apps',
     ),
 
     PortfolioModel(
@@ -88,9 +86,8 @@ abstract class PortfolioData {
         '50% fewer release errors',
         'MVP → MVVM migration',
       ],
-      iosUrl: 'https://apps.apple.com/ng/app/sterling-onebank/id1039638318',
-      androidUrl:
-          'https://play.google.com/store/apps/details?id=com.sterling.onebank',
+      iosUrl: 'https://apps.apple.com/ng/app/sterling-onebank/id1489139430',
+      androidUrl: 'https://play.google.com/store/apps/details?id=com.sterlingng.sterlingmobile',
     ),
 
     PortfolioModel(
@@ -123,9 +120,8 @@ abstract class PortfolioData {
         'Seamless payments integration',
         'Cross-platform Flutter codebase',
       ],
-      iosUrl: 'https://apps.apple.com/ng/app/switch-by-sterling/id1539586078',
-      androidUrl:
-          'https://play.google.com/store/apps/details?id=com.sterling.switch',
+      iosUrl: 'https://apps.apple.com/ng/app/switch-by-sterling/id1494153941',
+      androidUrl: 'https://play.google.com/store/search?q=switch+by+sterling&c=apps',
     ),
   ];
 }
