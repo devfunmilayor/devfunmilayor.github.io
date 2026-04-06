@@ -63,6 +63,24 @@
       }
     });
   </script>
+  <script>
+    var _pwaPrompt = null;
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      _pwaPrompt = e;
+    });
+    window.addEventListener('appinstalled', function () {
+      _pwaPrompt = null;
+    });
+    window.isPWAInstallable = function () { return !!_pwaPrompt; };
+    window.triggerPWAInstall = async function () {
+      if (!_pwaPrompt) return 'unavailable';
+      _pwaPrompt.prompt();
+      var result = await _pwaPrompt.userChoice;
+      _pwaPrompt = null;
+      return result.outcome;
+    };
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

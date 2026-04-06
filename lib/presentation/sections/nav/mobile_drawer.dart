@@ -2,10 +2,13 @@ import 'package:devfunmi/core/constants/app_colors.dart';
 import 'package:devfunmi/core/constants/app_spacing.dart';
 import 'package:devfunmi/core/constants/app_strings.dart';
 import 'package:devfunmi/core/constants/app_typography.dart';
+import 'package:devfunmi/core/di/injection.dart';
 import 'package:devfunmi/core/utils/cv_download_stub.dart';
+import 'package:devfunmi/core/utils/pwa_install_service.dart';
 import 'package:devfunmi/widgets/animations/stagger_list.dart';
 import 'package:devfunmi/widgets/buttons/icon_link_button.dart';
 import 'package:devfunmi/widgets/buttons/primary_button.dart';
+import 'package:devfunmi/widgets/buttons/pwa_install_button.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
@@ -109,6 +112,13 @@ class MobileDrawer extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: AppSpacing.lg),
+
+              // Install app (shown when installable)
+              PwaInstallButton(
+                service: getIt<PwaInstallService>(),
+                compact: false,
+              ),
+              const SizedBox(height: AppSpacing.sm),
 
               // CV download
               PrimaryButton(
