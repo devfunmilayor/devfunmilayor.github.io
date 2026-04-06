@@ -22,7 +22,7 @@ abstract class AppStrings {
   // Hero typewriter roles
   static const List<String> roles = [
     'Fullstack Mobile Engineer',
-    'Flutter & Go Developer',
+    'Flutter & Go Engineer',
     'iOS & Android Engineer',
     'Native Integration Specialist',
     'Learning Backstage & IDPs',
